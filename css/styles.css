@@ -1,11 +1,47 @@
+@font-face {
+    font-family: "BrightKenly";
+    src: url("../assets/BrightKenly.ttf") format("opentype");
+}
 body{
-    background-color: burlywood;
+    background-color: #ede8df;
+    margin: 0;
 }
-main{
-    background-color: #ffc0cb;
+header{
+    background-color: hsl(224, 74%, 83%);
+    text-align: center;
+    padding: 20px;
 }
-
+header section{
+    font-family: "BrightKenly";
+    font-size: 2rem;
+    letter-spacing: 5px;
+}
+main, #inicio{
+    display: grid;
+    grid-template-rows: 20% 80%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+main h2:first-child, #inicio h2:first-child{
+    grid-column: 1/4;
+    padding-bottom: 10%;
+}
 article{
     background-color: aliceblue;
     display: inline-block;
+    justify-items: center;
+}
+
+.dark{
+    background-color: #272725;
+    color: aliceblue;
+}
+.dark header {
+    background-color:  lch(54.85% 48.47 286.06) ;
+    color: lightgray;
+}
+.dark article{
+    background-color: #272725;
+    border: solid 1px;
+    border-color: lightgrey;
 }
