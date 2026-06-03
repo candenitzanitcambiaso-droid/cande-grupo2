@@ -1,0 +1,41 @@
+nav{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+nav a{
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+    padding:10px 15px;
+    border-radius:10px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+/*el ease controla la variacion de la velocidad de la transicion
+ease-in-out al principio lente, en el medio rapido y en el final lento*/
+nav a:hover{
+    background:white;
+    color: #2563eb;
+}
+
+button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    opacity: 1;/* Opacidad inicial fija */
+    transition: opacity 0.3s ease, background-color 0.3s ease; /* Que animar exactamente*/
+}
+
+button:hover{
+    opacity:0.8;
+    background-color: #1d4ed8;
+}
+/* mejor apariencia de los botones en el nav con
+shadow cada que pasas por encima*/

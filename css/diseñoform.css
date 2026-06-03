@@ -1,0 +1,13 @@
+form{
+    max-width:600px;
+    margin:0; /* Centra el formulario en la pantalla */
+    text-align: left; /* Hace que los textos de los labels se alineen a la izquierda */
+}
+input,textarea{
+    width:100%;
+    padding:10px;
+    border: radius 12px;
+    border:1px solid #ccc;
+    margin-top: 5px;
+    box-sizing: border-box; /* Evita que el padding deforme el ancho del 100% */
+}

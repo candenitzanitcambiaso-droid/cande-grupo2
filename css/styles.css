@@ -10,6 +10,76 @@ header{
     background-color: hsl(224, 74%, 83%);
     text-align: center;
     padding: 20px;
+    position:relative; /*para que el boton oscuro se alinee respecto al header*/
+}
+header section{
+    font-family: "BrightKenly";
+    font-size: 2rem;
+    letter-spacing: 5px;
+}
+main, #inicio{
+    display: grid;
+    grid-template-rows: 20% 80%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+main h2:first-child, #inicio h2:first-child
+.secDeNoticias{
+    display: grid;
+    grid-template-rows: 20% repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1%;
+    margin: 1%;
+}
+#principales{
+    grid-template-rows: 20% 80%;
+}
+.secDeNoticias, h2{
+    grid-column: 1/4;
+    padding-bottom: 10%;
+}
+article{
+    background-color: aliceblue;
+    display: inline-block;
+    justify-items: center;
+}
+
+.dark{
+    background-color: #272725;
+    color: aliceblue;
+}
+.dark header {
+    background-color:  lch(54.85% 48.47 286.06) ;
+    color: lightgray;
+}
+.dark article{
+    background-color: #272725;
+    border: solid 1px;
+    border-color: lightgrey;
+}
+#modoOscuro {
+    position: absolute;
+    top: 20px;       /* Distancia desde arriba */
+    right: 20px;     /* Distancia desde la derecha */
+    background-color: #374151;  /* para que se vea distinto a los otros botones*/
+    font-size: 0.9rem;
+    padding: 8px 15px;
+}
+main,#inicio,#resena,footer{
+    margin: 30px; /*que no se choque el contenido contra los limites*/
+} 
+@font-face {
+    font-family: "BrightKenly";
+    src: url("../assets/BrightKenly.ttf") format("opentype");
+}
+body{
+    background-color: #ede8df;
+    margin: 0;
+}
+header{
+    background-color: hsl(224, 74%, 83%);
+    text-align: center;
+    padding: 20px;
 }
 header section{
     font-family: "BrightKenly";
@@ -49,10 +119,6 @@ article{
     border: solid 1px;
     border-color: lightgrey;
 }
-@font-face {
-    font-family: "BrightKenly";
-    src: url("../assets/BrightKenly.ttf") format("opentype");
-}
 body{
     background-color: #ede8df;
     margin: 0;
@@ -82,6 +148,7 @@ article{
     display: inline-block;
     justify-items: center;
 }
+
 .dark{
     background-color: #272725;
     color: aliceblue;
@@ -90,7 +157,6 @@ article{
     background-color:  lch(54.85% 48.47 286.06) ;
     color: lightgray;
 }
-
 .dark article{
     background-color: #272725;
     border: solid 1px;
@@ -112,68 +178,4 @@ button{
 img{
     max-height: 100%;
     max-width: 100%;
-}
-.completo{
-    display: none;
-    padding: 10px;
-    text-align: justify;
-    overflow-wrap: break-word;
-    white-space: normal;
-}
-.leerMas{
-    text-decoration: none;
-    border: solid 1px black;
-    padding: 5px 10px;
-    color: black;
-    margin-top: auto;
-    align-self: flex-end;
-}
-
-.leerMas:hover{
-    background-color: lightgray;
-}
-/* Sobreescribimos el Grid del main para la página de la noticia */
-main.paginaNoticia {
-    display: block; /* Cambiamos de grid a bloque normal */
-    max-width: 800px; /* Un ancho óptimo para lectura */
-    margin: 40px auto;
-    padding: 20px;
-}
-
-/* Estructura limpia para el contenido */
-.paginaNoticia h2 {
-    font-family: "BrightKenly", sans-serif;
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-/* Contenedor opcional para la imagen y el texto principal */
-.noticia-cabecera {
-    display: flex;
-    gap: 30px;
-    align-items: start;
-    margin-bottom: 30px;
-}
-
-.noticia-cabecera img {
-    width: 40%; /* La imagen ocupa una parte */
-    max-height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.noticia-cabecera .extracto {
-    width: 60%;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    text-align: justify;
-}
-
-/* El resto del texto que va abajo a ancho completo */
-.noticia-cuerpo {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    text-align: justify;
-    clear: both;
 }

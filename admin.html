@@ -6,85 +6,26 @@
 </head>
 <body>
 
-    <h1>Panel de Administración</h1>
+<h1>Panel de Administración</h1>
 
-    <form id="form-noticia">
-        <label for="titulo">Título:</label>
-        <input type="text" id="titulo" required>
+<section id="formulario-admin">
+    <h2 id="titulo-formulario">Nueva noticia</h2>
 
-        <label for="descripcion">Descripción:</label>
-        <textarea id="descripcion" required></textarea>
+    <input type="hidden" id="noticia-id">
 
-        <label for="imagen">URL de la imagen:</label>
-        <input type="url" id="imagen" required>
+    <label for="noticia-titulo">Título</label><br>
+    <input type="text" id="noticia-titulo" placeholder="Título de la noticia" required><br><br>
 
-        <button type="submit">Guardar Noticia</button>
-    </form>
+    <label for="noticia-descripcion">Descripción</label><br>
+    <textarea id="noticia-descripcion" rows="4" placeholder="Síntesis de la noticia"></textarea><br><br>
 
-    <hr>
+    <label for="noticia-imagen">URL de imagen</label><br>
+    <input type="url" id="noticia-imagen" placeholder="https://..."><br><br>
 
-    <h2>Noticias cargadas</h2>
+    <button id="btn-guardar-noticia">Guardar noticia</button>
+    <button id="btn-cancelar" style="display:none;">Cancelar edición</button>
+</section>
 
-    <div id="tabla-edicion"></div>
-
-    <script src="js/admin.js"></script>
-
-</body>
-</html>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TeenNews — Panel Admin</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-
-<header>
-    <div id="header-top">
-        <div id="precio-dolar">Cargando cotización...</div>
-        <button id="boton-dark-mode">Modo Oscuro</button>
-        <button id="btn-cerrar-sesion">Cerrar sesión</button>
-    </div>
-    <section id="identidad">
-        <h1>TeenNews</h1>
-        <h2>Panel de Administración</h2>
-    </section>
-</header>
-
-<main>
-    <section id="formulario-admin">
-        <h2 id="titulo-formulario">Nueva noticia</h2>
-
-        <input type="hidden" id="noticia-id">
-
-        <label for="noticia-titulo">Título</label><br>
-        <input type="text" id="noticia-titulo" placeholder="Título de la noticia" required><br><br>
-
-        <label for="noticia-descripcion">Descripción</label><br>
-        <textarea id="noticia-descripcion" rows="4" placeholder="Síntesis de la noticia"></textarea><br><br>
-
-        <label for="noticia-imagen">URL de imagen</label><br>
-        <input type="url" id="noticia-imagen" placeholder="https://..."><br><br>
-
-        <button id="btn-guardar-noticia">Guardar noticia</button>
-        <button id="btn-cancelar" style="display:none;">Cancelar edición</button>
-    </section>
-
-    <hr>
-
-    <section>
-        <h2>Noticias publicadas</h2>
-        <div id="tabla-edicion"></div>
-    </section>
-</main>
-
-<footer>
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <hr>
-        <p>Brunelli, Sofía &nbsp;|&nbsp; Cambiaso, Candela &nbsp;|&nbsp; Gomez, Ana &nbsp;|&nbsp; Pochettino del Puerto, Mailén &nbsp;|&nbsp; Quintanilla, Ornella</p>
-    </section>
-</footer>
-
-<script src="js/script.js"></script>
 <script src="js/admin.js"></script>
 
 </body>
