@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Control</title>
+</head>
+<body>
+
+    <h1>Panel de Administración</h1>
+
+    <form id="form-noticia">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" required>
+
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" required></textarea>
+
+        <label for="imagen">URL de la imagen:</label>
+        <input type="url" id="imagen" required>
+
+        <button type="submit">Guardar Noticia</button>
+    </form>
+
+    <hr>
+
+    <h2>Noticias cargadas</h2>
+
+    <div id="tabla-edicion"></div>
+
+    <script src="js/admin.js"></script>
+
+</body>
+</html>
