@@ -1,14 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link ref: "stylesheet" href="css\styles.css">
+    <title>TeenNews</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-</body>
 
-<script src: js\script.js>
-</script>
+<header>
+    <div id="header-top">
+        <div id="precio-dolar">Cargando cotización...</div>
+        <button id="boton-dark-mode">Modo Oscuro</button>
+        <a href="login.html" id="link-login">Admin</a>
+    </div>
+
+    <section id="identidad">
+        <h1>TeenNews</h1>
+        <h2>¡Bienvenidos! ☻</h2>
+    </section>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#videojuegos">Videojuegos</a>
+        <a href="#tecnologia">Tecnología</a>
+        <a href="#musica">Música</a>
+        <a href="#deportes">Deportes</a>
+        <a href="#chisme">Chisme</a>
+        <input type="text" id="buscar" placeholder="Buscar noticia...">
+        <button id="btnbuscar">Buscar</button>
+    </nav>
+</header>
+
+<main>
+    <section id="noticias-home"></section>
+</main>
+
+<section id="inicio">
+    <h2>Este mes</h2>
+</section>
+
+<section id="resena">
+    <h2>Reseña</h2>
+    <h3>¡Dejanos tu opinión o tus preguntas, muchas gracias!</h3>
+    <form action="#" method="post">
+        <label for="nombre">Nombre</label><br>
+        <input placeholder="Nombre completo" type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="email">Email</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="mensaje">Mensaje</label><br>
+        <textarea id="mensaje" name="mensaje" rows="4"></textarea><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+<footer>
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <hr>
+        <p>Brunelli, Sofía &nbsp;|&nbsp; Cambiaso, Candela &nbsp;|&nbsp; Gomez, Ana &nbsp;|&nbsp; Pochettino del Puerto, Mailén &nbsp;|&nbsp; Quintanilla, Ornella</p>
+    </section>
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
 </html>
