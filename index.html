@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,6 +32,23 @@
         <img src="" alt="">
         <h3>noticia 1 nombre</h3>
         <p>sintesis de la noticia</p>
+ <a href="#inicio">Inicio</a>
+        <a href="#Videojuegos">Videojuegos</a>
+        <a href="#Tecnología">Tecnología</a>
+        <a href="#Música">Música</a>
+        <a href="#Deportes">Deportes</a>
+        <a href="#Chisme">Chisme</a>
+        <input type="text" id="buscar" placeholder="Buscar noticia...">
+        <button id="btnbuscar">Buscar</button>
+</nav>
+</header>
+
+<main id="principales">
+    <h2 id="tituloNoticia">Últimas noticias</h2>
+    <article class="noticia">
+        <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmFza2V0YmFsbCUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D" alt="basket">
+        <h3>Basketball</h3>
+        <p>Nacional contra paisese basketball club- cuartos de final- Basketball champions league 2025-2026</p>
         <button>Leer más</button>
     </article>
     <article class="noticia">
@@ -130,6 +147,8 @@
 
 <section id="musica" class="secDeNoticias">
     <h2>Música</h2>
+<section id="inicio">
+    <h2>Este mes</h2>
     <article class="noticia">
         <img src="" alt="">
         <h3>noticia 1 nombre</h3>
@@ -298,6 +317,18 @@
             <input placeholder="Nombre completo" type="text" id="nombre" name="nombre" required />
             <br /><br />
 
+</section>
+
+ <section>
+     <section id="resena">
+        <h2>Reseña</h2>  
+        </section>
+        <h3>¡Dejanos tu opinion o tus preguntas, muchas gracias!</h3>
+        <form action="#" method="post">
+            <label for="nombre">Nombre</label><br />
+            <input placeholder="Nombre completo" type="text" id="nombre" name="nombre" required />
+            <br /><br />
+
             <label for="email">Email</label><br />
             <input type="email" id="email" name="email" required />
             <br /><br />
@@ -305,6 +336,7 @@
             <label for="mensaje">Mensaje</label><br />
             <textarea id="mensaje" name="mensaje" rows="4"></textarea>
             <br /><br />
+
             <button type="submit">Enviar</button>
         </form>
     </section>
