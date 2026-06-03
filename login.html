@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeenNews — Acceso</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+    <div id="header-top">
+        <div id="precio-dolar">Cargando cotización...</div>
+        <button id="boton-dark-mode">Modo Oscuro</button>
+    </div>
+    <section id="identidad">
+        <h1>TeenNews</h1>
+        <h2>Panel de acceso</h2>
+    </section>
+</header>
+
+<main>
+    <section id="login-contenedor">
+        <h2>Ingresar</h2>
+
+        <form id="formulario-login">
+            <label for="usuario">Usuario</label><br>
+            <input type="text" id="usuario" name="username" placeholder="Tu usuario" required><br><br>
+
+            <label for="contrasena">Contraseña</label><br>
+            <input type="password" id="contrasena" name="password" placeholder="Tu contraseña" required><br><br>
+
+            <button type="submit" id="btn-ingresar">Ingresar</button>
+        </form>
+
+        <p id="error-login" style="display:none; color:red;">
+            Usuario o contraseña incorrectos. Intentá de nuevo.
+        </p>
+
+        <p id="cargando-login" style="display:none;">
+            Verificando...
+        </p>
+
+        <p><a href="index.html">← Volver al inicio</a></p>
+    </section>
+</main>
+
+<footer>
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <hr>
+        <p>Brunelli, Sofía &nbsp;|&nbsp; Cambiaso, Candela &nbsp;|&nbsp; Gomez, Ana &nbsp;|&nbsp; Pochettino del Puerto, Mailén &nbsp;|&nbsp; Quintanilla, Ornella</p>
+    </section>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/login.js"></script>
+
+</body>
+</html>
