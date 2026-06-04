@@ -73,7 +73,7 @@ function renderizarNoticias() {
 }
 
 function iniciarModoOscuro() {
-    const boton = document.getElementById("boton-dark-mode");
+    const boton = document.getElementById("modoOscuro");
     if (!boton) return;
 
     if (localStorage.getItem("darkMode") === "activado") {
