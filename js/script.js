@@ -1,80 +1,39 @@
-const boton = document.getElementById("modoOscuro");
-boton.addEventListener("click", function(){
-    document.body.classList.toggle("dark")
-});
-
-const btnbuscar = document.getElementById("btnbuscar");
-btnbuscar.addEventListener("click", function(){
-    let texto = document.getElementById("buscar").value
-    .toLowerCase();
-    const noticias = document.querySelectorAll(".noticia");
-    noticias.forEach(function(noticia){
-        let titulo = noticia.querySelector("h3").textContent.toLowerCase()
-        if(titulo.includes(texto)){
-            noticia.style.display="block";
-        } else{
-            noticia.style.display="none";
-        }
-    });
-});
-
-const botonesLeer =
-document.querySelectorAll(".leerMas");
-botonesLeer.forEach(function(boton){
-    boton.addEventListener("click", function(){
-        const noticia =
-        boton.parentElement;
-        const textoCompleto =
-        noticia.querySelector(".completo");
-        if(textoCompleto.style.display === "block"){
-            textoCompleto.style.display = "none";
-            boton.textContent =
-            "Leer más";
-        }
-        else{
-            textoCompleto.style.display =
-            "block";
-            boton.textContent =
-            "Leer menos";
-        }
-    });
-});
 const NOTICIAS_INICIALES = [
     {
         id: 1,
-        titulo: "PlayStation 6 confirma fecha de lanzamiento",
-        descripcion: "Sony anunció oficialmente que la PS6 llega a fin de año con gráficos never-before-seen.",
-        imagen: "https://placehold.co/400x200?text=PS6"
+        titulo: "Romeo Beckham lanza su marca de ropa deportiva INTRA",
+        descripcion: "El hijo de David Beckham debuta en el mundo de la moda con una línea deportiva que ya genera polémica por su estética hooligan.",
+        imagen: "assets/1.jpeg"
     },
     {
         id: 2,
-        titulo: "Dua Lipa se casó y el mundo enloquece",
-        descripcion: "La cantante confirmó su casamiento en una ceremonia privada que explotó en redes sociales.",
-        imagen: "https://placehold.co/400x200?text=Dua+Lipa"
+        titulo: "¿Qué países gastan más en artículos de lujo?",
+        descripcion: "Un nuevo ranking revela cuáles son las naciones que más invierten en moda y accesorios de alta gama a nivel mundial.",
+        imagen: "assets/2.jpeg"
     },
     {
         id: 3,
-        titulo: "La IA ya puede generar videojuegos completos",
-        descripcion: "Una startup mostró cómo su modelo genera niveles jugables en segundos con solo texto.",
-        imagen: "https://placehold.co/400x200?text=IA+Games"
+        titulo: "Messi x Kith: la colección con Adidas que une fútbol y moda",
+        descripcion: "Ronnie Fieg y Lionel Messi se unen para lanzar una colección exclusiva de ropa y zapatillas para Adidas Football.",
+        imagen: "assets/3.jpeg"
     },
     {
         id: 4,
-        titulo: "Argentina clasifica al Mundial Sub-20",
-        descripcion: "La Selección goleó 4 a 0 en el partido decisivo y ya tiene pasaje al mundial.",
-        imagen: "https://placehold.co/400x200?text=Futbol"
+        titulo: "Las marcas internacionales que llegan a Argentina en 2026",
+        descripcion: "Sandro, Mango y otras firmas globales planifican abrir locales en el país. El mapa completo de aperturas previstas.",
+        imagen: "assets/4.jpeg"
     },
     {
         id: 5,
-        titulo: "El chisme del año: ruptura inesperada en Hollywood",
-        descripcion: "La pareja más seguida de las redes confirmó su separación con un comunicado conjunto.",
-        imagen: "https://placehold.co/400x200?text=Chisme"
+        titulo: "Crisis textil: la producción cayó más de 30% desde 2023",
+        descripcion: "El sector sigue hundiéndose. Los números muestran una caída sostenida que preocupa a fabricantes y trabajadores del rubro.",
+        imagen: "assets/5.jpeg"
     },
     {
         id: 6,
-        titulo: "Apple presenta lentes de realidad mixta para teens",
-        descripcion: "El nuevo dispositivo pesa menos que unos auriculares y tiene autonomía de 8 horas.",
-        imagen: "https://placehold.co/400x200?text=Apple+AR"
+        titulo: "Chrome Hearts: la marca que se hizo imposible de conseguir",
+        descripcion: "Sin publicidad, sin e-commerce y con listas de espera eternas. Así se convirtió Chrome Hearts en el objeto de deseo más exclusivo del momento.",
+        imagen: "assets/6.jpeg"
     }
 ];
 
@@ -114,7 +73,7 @@ function renderizarNoticias() {
 }
 
 function iniciarModoOscuro() {
-    const boton = document.getElementById("boton-dark-mode");
+    const boton = document.getElementById("modoOscuro");
     if (!boton) return;
 
     if (localStorage.getItem("darkMode") === "activado") {

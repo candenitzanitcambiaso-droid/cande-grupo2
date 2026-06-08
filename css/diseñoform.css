@@ -1,13 +1,24 @@
-form{
+form {
     max-width:600px;
     margin:0; /* Centra el formulario en la pantalla */
-    text-align: left; /* Hace que los textos de los labels se alineen a la izquierda */
+    text-align:left; /* Hace que los textos de los labels se alineen a la izquierda */
 }
-input,textarea{
+
+input,textarea, #formulario-admin input,
+#formulario-admin textarea{
     width:100%;
     padding:10px;
-    border: radius 12px;
+    border-radius: 12px;
     border:1px solid #ccc;
     margin-top: 5px;
     box-sizing: border-box; /* Evita que el padding deforme el ancho del 100% */
+}
+#formulario-admin {
+    max-width: 600px;    /* Achica el panel para que no ocupe toda la pantalla */
+    margin: 50px auto;   /* El 'auto' hace la magia de centrarlo SÓLO a este formulario */
+    background-color: white; /* Le da un fondo blanco limpio para que resalte */
+    padding: 30px;
+    border-radius: 15px; /* Bordes redondeados para el panel */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Una sombra suave alrededor */
+    text-align: left;    /* Alinea las etiquetas a la izquierda */
 }

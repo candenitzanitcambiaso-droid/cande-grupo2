@@ -21,21 +21,28 @@ nav a:hover{
     background:white;
     color: #2563eb;
 }
-
-button{
-    background:#2563eb;
-    color:white;
-    border:none;
-    padding:10px 20px;
-    border-radius:10px;
-    cursor:pointer;
-    opacity: 1;/* Opacidad inicial fija */
-    transition: opacity 0.3s ease, background-color 0.3s ease; /* Que animar exactamente*/
+button, #btnbuscar, form button, article button, article a, #volver-inicio {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none; /* Le saca el subrayado feo a los enlaces <a> */
+    display: inline-block;  /* Hace que los enlaces respeten el padding de botón */
+    opacity: 1;
+    transition: opacity 0.3s ease-in, background-color 0.3s ease-in, transform 0.3s ease, box-shadow 0.3s ease-in;
 }
 
-button:hover{
-    opacity:0.8;
+button:hover, 
+#btnbuscar:hover, 
+form button:hover, 
+article button:hover, 
+article a:hover {
+    opacity: 0.8;
     background-color: #1d4ed8;
+    color: white;
 }
-/* mejor apariencia de los botones en el nav con
-shadow cada que pasas por encima*/
+/* hace que cuando el usuario pase el cursor en la tarjeta se levante el boton*/

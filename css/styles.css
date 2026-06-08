@@ -2,180 +2,60 @@
     font-family: "BrightKenly";
     src: url("../assets/BrightKenly.ttf") format("opentype");
 }
-body{
+
+body {
     background-color: #ede8df;
     margin: 0;
 }
-header{
+
+header {
     background-color: hsl(224, 74%, 83%);
     text-align: center;
     padding: 20px;
-    position:relative; /*para que el boton oscuro se alinee respecto al header*/
+    position: relative; /* Para que el botón oscuro se alinee bien */
 }
-header section{
+
+header section {
     font-family: "BrightKenly";
     font-size: 2rem;
     letter-spacing: 5px;
 }
-main, #inicio{
+
+main, #inicio, .secDeNoticias {
     display: grid;
-    grid-template-rows: 20% 80%;
     grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
-}
-main h2:first-child, #inicio h2:first-child
-.secDeNoticias{
-    display: grid;
-    grid-template-rows: 20% repeat(2, 1fr);
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1%;
-    margin: 1%;
-}
-#principales{
-    grid-template-rows: 20% 80%;
-}
-.secDeNoticias, h2{
-    grid-column: 1/4;
-    padding-bottom: 10%;
-}
-article{
-    background-color: aliceblue;
-    display: inline-block;
-    justify-items: center;
+    gap: 20px;
 }
 
-.dark{
-    background-color: #272725;
-    color: aliceblue;
+main h2:first-child, #inicio h2:first-child, .secDeNoticias h2 {
+    grid-column: 1 / 4;
+    padding-bottom: 2%;
 }
-.dark header {
-    background-color:  lch(54.85% 48.47 286.06) ;
-    color: lightgray;
-}
-.dark article{
-    background-color: #272725;
-    border: solid 1px;
-    border-color: lightgrey;
-}
-#modoOscuro {
+
+main, #inicio, #resena, footer, #gaming, #tecnologia, #musica, #deportes, #chisme, #moda {
+    margin: 40px 30px;
+}/*para que quede espacio*/
+
+#boton-dark-mode {
     position: absolute;
-    top: 20px;       /* Distancia desde arriba */
-    right: 20px;     /* Distancia desde la derecha */
-    background-color: #374151;  /* para que se vea distinto a los otros botones*/
+    top: 20px;
+    right: 20px;
+    background-color: #374151;
     font-size: 0.9rem;
     padding: 8px 15px;
 }
-main,#inicio,#resena,footer{
-    margin: 30px; /*que no se choque el contenido contra los limites*/
-} 
-@font-face {
-    font-family: "BrightKenly";
-    src: url("../assets/BrightKenly.ttf") format("opentype");
-}
-body{
-    background-color: #ede8df;
-    margin: 0;
-}
-header{
-    background-color: hsl(224, 74%, 83%);
-    text-align: center;
-    padding: 20px;
-}
-header section{
-    font-family: "BrightKenly";
-    font-size: 2rem;
-    letter-spacing: 5px;
-}
-.secDeNoticias{
-    display: grid;
-    grid-template-rows: 20% repeat(2, 1fr);
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1%;
-    margin: 1%;
-}
-#principales{
-    grid-template-rows: 20% 80%;
-}
-.secDeNoticias, h2{
-    grid-column: 1/4;
-    padding-bottom: 10%;
-}
-article{
-    background-color: aliceblue;
-    display: inline-block;
-    justify-items: center;
-}
 
-.dark{
+.dark {
     background-color: #272725;
     color: aliceblue;
 }
+
 .dark header {
-    background-color:  lch(54.85% 48.47 286.06) ;
+    background-color: lch(54.85% 48.47 286.06);
     color: lightgray;
-}
-.dark article{
-    background-color: #272725;
-    border: solid 1px;
-    border-color: lightgrey;
-}
-body{
-    background-color: #ede8df;
-    margin: 0;
-}
-header{
-    background-color: hsl(224, 74%, 83%);
-    text-align: center;
-    padding: 20px;
-}
-header section{
-    font-family: "BrightKenly";
-    font-size: 2rem;
-    letter-spacing: 5px;
-}
-main, #inicio{
-    display: grid;
-    grid-template-rows: 20% 80%;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
-}
-main h2:first-child, #inicio h2:first-child{
-    grid-column: 1/4;
-    padding-bottom: 10%;
-}
-article{
-    background-color: aliceblue;
-    display: inline-block;
-    justify-items: center;
 }
 
-.dark{
+.dark article {
     background-color: #272725;
-    color: aliceblue;
-}
-.dark header {
-    background-color:  lch(54.85% 48.47 286.06) ;
-    color: lightgray;
-}
-.dark article{
-    background-color: #272725;
-    border: solid 1px;
-    border-color: lightgrey;
-}
-.dark button{
-    background-color: transparent;
-    color: lightgrey;
-    border-color: lightgray;
-    border: solid 1px;
-}
-button{
-    background-color: transparent ;
-    border: solid 1px;
-    border-color: black;
-    cursor: pointer;
-    padding: 1px 2px;
-}
-img{
-    max-height: 100%;
-    max-width: 100%;
+    border: solid 1px lightgrey;
 }
