@@ -49,8 +49,6 @@ function renderizarNoticias() {
 
     const datos = JSON.parse(localStorage.getItem("noticias")) || [];
 
-    contenedor.innerHTML = "<h2>Últimas noticias</h2>";
-
     if (datos.length === 0) {
         contenedor.innerHTML += "<p>No hay noticias publicadas todavía.</p>";
         return;
@@ -73,7 +71,7 @@ function renderizarNoticias() {
 }
 
 function iniciarModoOscuro() {
-    const boton = document.getElementById("modoOscuro");
+    const boton = document.getElementById("boton-dark-mode");
     if (!boton) return;
 
     if (localStorage.getItem("darkMode") === "activado") {
