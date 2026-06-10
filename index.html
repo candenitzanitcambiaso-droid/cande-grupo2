@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TeenNews</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/diseñoart1.css">
-    <link rel="stylesheet" href="css/diseñoform.css">
-    <link rel="stylesheet" href="css/diseñonav.css">
+    <link rel="stylesheet" href="css\diseñoart1.css">
+    <link rel="stylesheet" href="css\diseñoform.css">
+    <link rel="stylesheet" href="css\diseñonav.css">
 </head>
 <body>
 
-<header>
+<header id="inicio">
     <button id="boton-dark-mode">Modo Oscuro</button>
     <section id="identidad">
         <h1>TeenNews</h1>
@@ -20,208 +20,199 @@
     <div id="precio-dolar">Cargando cotización...</div>
     <nav>
         <a href="#gaming">Gaming</a>
-        <a href="#tecnologia">Tecnología</a>
         <a href="#musica">Música</a>
         <a href="#deportes">Deportes</a>
         <a href="#chisme">Chisme</a>
         <a href="#moda">Moda</a>
         <a href="login.html">Admin</a>
+        <a href="#inicio" class="botonInicio">Volver al Inicio</a>
         <input type="text" id="buscar" placeholder="Buscar noticia...">
         <button id="btnbuscar">Buscar</button>
     </nav>
 </header>
 
-<main>
-    <section id="noticias-home" class="secDeNoticias">
-        <h2>Utimas noticias</h2>
-        <article class="noticia">
+<section id="noticias-home" class="secDeNoticias">
+    <h2>Últimas noticias</h2>
+    <article class="noticia">
         <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmFza2V0YmFsbCUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D" alt="basket">
-        <h3>Basketball</h3>
+        <h3>Lo ultimo de Basketball! ¿Las nuevas estrellas del Basketball creceran en Puerto Rico?</h3>
         <p>La primera NBA Basketball School se inaugura en Puerto Rico</p>
-        <p class="completo">
-</p>
-<a href="nba.html" class="leerMas">
-    Leer más
-</a>
+        <a href="/noticias/deporte/nba.html" class="leerMas">Leer más</a>
     </article>
     <article class="noticia">
         <img src="https://www.hola.com/horizon/landscape/afeb52833b00-firefly-9.jpg?im=Resize=(960),type=downsize" alt="Se casó Dualipa">
-        <h3>Dua Lipa se casa</h3>
+        <h3>Dua Lipa se casa con el actor famoso, Callum Torner</h3>
         <p>Se casó en Londres con el traje de novia más inesperado: un guiño a Bianca Jagger 55 años después</p>
-        <a href="dualipasecasa.html" class="leerMas">
-    Leer más
-</a>
+        <a href="/noticias/chisme/dualipasecasa.html" class="leerMas">Leer más</a>
     </article>
-    </section>
-</main>
+</section>
 
 <section id="gaming" class="secDeNoticias">
     <h2>Gaming</h2>
     <article class="noticia">
-        <img src="" alt="">
-        <h3>noticia 1 nombre</h3>
-        <p>sintesis de la noticia</p>
-        <button>Leer más</button>
+        <img src="assets/gaming/shyvana.jpg" alt="Shyvana">
+        <h3>Rework De Shyvana en LoL</h3>
+        <p>Riot confirma la actualización completa de Shyvana con nuevo kit de habilidades</p>
+        <a href="noticias/gaming/shyvanaLol.html" class="leerMas">
+            Leer más
+        </a>
     </article>
     <article class="noticia">
-        <img src="" alt="">
-        <h3>noticia 2 nombre</h3>
-        <p>sintesis de la noticia</p>
-        <button>Leer más</button>
+        <img src="assets/gaming/esports-lol.jpg" alt="MSI y Worlds de League of Legends">
+        <h3>Revelados los detalles y sedes del MSI y los Worlds de League of Legends</h3>
+        <p>Riot Games ha anunciado algunos de los detalles clave de la temporada de LoL</p>
+        <a href="noticias/gaming/msi2026.html" class="leerMas">
+            Leer más
+        </a>
     </article>
     <article class="noticia">
-        <img src="" alt="">
-        <h3>noticia 3 nombre</h3>
-        <p>sintesis de la noticia</p>
-        <button>Leer más</button>
+        <img src="assets/gaming/ak47-skins.jpg" alt="Skins de AK-47 en Counter-Strike 2">
+        <h3>Grandes skins de AK-47 en CS2</h3>
+        <p>Les traemos algunas opciones más que llamativas</p>
+        <a href="noticias/gaming/skinsCS.html" class="leerMas">
+            Leer más
+        </a>
     </article>
     <article class="noticia">
-        <img src="" alt="">
-        <h3>noticia 4 nombre</h3>
-        <p>sintesis de la noticia</p>
-        <button>Leer más</button>
+        <img src="assets/gaming/cs2-crosshairs.jpg" alt="Mejores miras de Counter-Strike 2">
+        <h3>Mejores códigos de miras de CS2 usados por "pros"</h3>
+        <p>Mira los más elegidos por los mejores jugadores del momento</p>
+        <a href="noticias/gaming/mirasCs2.html" class="leerMas">
+            Leer más
+        </a>
     </article>
     <article class="noticia">
-        <img src="" alt="">
-        <h3>noticia 5 nombre</h3>
-        <p>sintesis de la noticia</p>
-        <button>Leer más</button>
+        <img src="assets/gaming/valorant-training.jpg" alt="Entrenamiento con bots en Valorant">
+        <h3>Cómo jugar con bots en Valorant para practicar y mejorar tu nivel</h3>
+        <p>Descubre el método definitivo para crear tu propio campo de entrenamiento en Valorant con bots de IA y mejora tus habilidades sin presión</p>
+        <a href="noticias/gaming/mejorarValo.html" class="leerMas">
+            Leer más
+        </a>
     </article>
     <article class="noticia">
-        <img src="" alt="">
-        <h3>noticia 6 nombre</h3>
-        <p>sintesis de la noticia</p>
-        <button>Leer más</button>
-    </article>
-</section>
-
-<section id="tecnologia" class="secDeNoticias">
-    <h2>Tecnología</h2>
-    <article class="noticia">
-        <img src="" alt="">
-        <h3>noticia 1 nombre</h3>
-        <p>sintesis de la noticia</p>
-        <button>Leer más</button>
-    </article>
-    <article class="noticia">
-        <img src="" alt="">
-        <h3>noticia 2 nombre</h3>
-        <p>sintesis de la noticia</p>
-        <button>Leer más</button>
-    </article>
-    <article class="noticia">
-        <img src="" alt="">
-        <h3>noticia 3 nombre</h3>
-        <p>sintesis de la noticia</p>
-        <button>Leer más</button>
-    </article>
-    <article class="noticia">
-        <img src="" alt="">
-        <h3>noticia 4 nombre</h3>
-        <p>sintesis de la noticia</p>
-        <button>Leer más</button>
-    </article>
-    <article class="noticia">
-        <img src="" alt="">
-        <h3>noticia 5 nombre</h3>
-        <p>sintesis de la noticia</p>
-        <button>Leer más</button>
-    </article>
-    <article class="noticia">
-        <img src="" alt="">
-        <h3>noticia 6 nombre</h3>
-        <p>sintesis de la noticia</p>
-        <button>Leer más</button>
+        <img src="assets/gaming/vct-calendario.jpg" alt="Valorant Champions Tour Calendario">
+        <h3>Hoja de ruta de la VCT: Calendario oficial y novedades del circuito</h3>
+        <p>Riot Games ha presentado de forma oficial la estructura competitiva y el calendario completo para las diferentes etapas del Valorant Champions Tour (VCT).</p>
+        <a href="noticias/gaming/valorantCham.html" class="leerMas">
+            Leer más
+        </a>
     </article>
 </section>
 
 <section id="musica" class="secDeNoticias">
     <h2>Música</h2>
     <article class="noticia">
-        <img src="" alt="">
-        <h3>noticia 1 nombre</h3>
-        <p>sintesis de la noticia</p>
-        <button>Leer más</button>
+        <img src="assets/música/niall.png" alt="portada del album">
+        <h3>Niall Horan nos invita a su ‘Dinner party’, su nuevo álbum</h3>
+        <p>Niall Horan vuelve con su nuevo álbum Dinner party, un disco que invita a la nostalgia, el amor y la intimidad.</p>
+        <a href="/noticias/música/niall.html" class="leerMas">
+        Leer más
+    </a>
     </article>
     <article class="noticia">
-        <img src="" alt="">
-        <h3>noticia 2 nombre</h3>
-        <p>sintesis de la noticia</p>
-        <button>Leer más</button>
+        <img src="assets/música/liamylouis.webp" alt="louis y liam en one direction">
+        <h3>La canción que Louis Tomlinson habría escrito sobre Liam Payne</h3>
+        <p>Dark To Light, un tema emotivo donde el artista se pregunta si hubiera podido hacer algo más por su excompañero de One Direction.</p>
+        <a href="/noticias/música/louis.html" class="leerMas">
+        Leer más
+    </a>
     </article>
     <article class="noticia">
-        <img src="" alt="">
-        <h3>noticia 3 nombre</h3>
-        <p>sintesis de la noticia</p>
-        <button>Leer más</button>
+        <img src="data:image/jpeg;base64,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" alt="taylor swift con jessie de toy story">
+        <h3>Taylor Swift vuelve al country en ‘I Knew It, I Knew You’</h3>
+        <p>Taylor Swift regresa a sus raíces de música country con “I Knew It, I Knew You”. El tema formará parte de la banda sonora de "Toy Story 5".</p>
+        <a href="/noticias/música/taylor.html" class="leerMas">
+        Leer más
+    </a>
     </article>
     <article class="noticia">
-        <img src="" alt="">
-        <h3>noticia 4 nombre</h3>
-        <p>sintesis de la noticia</p>
-        <button>Leer más</button>
+        <img src="assets/música/rickymartin.webp" alt="">
+        <h3>Aquí todas las canciones e himnos oficiales de la Copa Mundial a través de los años</h3>
+        <p>Estas son las canciones adoptadas por la FIFA para cada torneo de fútbol desde 1990.</p>
+        <a href="/noticias/música/mundial.html" class="leerMas">
+        Leer más
+    </a>
     </article>
     <article class="noticia">
-        <img src="" alt="">
-        <h3>noticia 5 nombre</h3>
-        <p>sintesis de la noticia</p>
-        <button>Leer más</button>
+        <img src="assets/música/arianagrande.jpg" alt="portada del single">
+        <h3>Ariana Grande en el número 1 del Billboard Hot 100 con y alcanzó un nuevo récord</h3>
+        <p>Impulsada por el lanzamiento del primer sencillo de su próximo álbum, la artista volvió a liderar las listas estadounidenses y se sumó a un selecto grupo de figuras que marcaron época en la industria musical</p>
+        <a href="/noticias/música/ariana.html" class="leerMas">
+        Leer más
+    </a>
     </article>
     <article class="noticia">
-        <img src="" alt="">
-        <h3>noticia 6 nombre</h3>
-        <p>sintesis de la noticia</p>
-        <button>Leer más</button>
+        <img src="assets/música/comida.avif" alt="plato de comida y audifonos">
+        <h3>Un estudio reveló que la música puede modificar la forma en que se percibe el sabor de la comida</h3>
+        <p>La investigación estudió el efecto de los sonidos sobre el gusto y cómo pueden influir en la experiencia al comer.</p>
+        <a href="/noticias/música/comida.html" class="leerMas">
+        Leer más
+    </a>
     </article>
 </section>
 
 <section id="deportes" class="secDeNoticias">
     <h2>Deportes</h2>
     <article class="noticia">
-        <img src="" alt="">
-        <h3>noticia 1 nombre</h3>
-        <p>sintesis de la noticia</p>
-        <button>Leer más</button>
+        <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmFza2V0YmFsbCUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D" alt="basket">
+        <h3>Lo ultimo de <mark>Basketball</mark>! ¿Las nuevas estrellas del Basketball creceran en Puerto Rico?</h3>
+        <p>La primera NBA Basketball School se inaugura en Puerto Rico</p>
+    <a href="/noticias/deporte/nba.html" class="leerMas">
+        Leer más
+    </a>
     </article>
     <article class="noticia">
-        <img src="" alt="">
-        <h3>noticia 2 nombre</h3>
-        <p>sintesis de la noticia</p>
-        <button>Leer más</button>
+        <img src="https://elsoldechiapas.com/wp-content/uploads/2026/06/LAS-INTELIGENCIAS-ARTIFICIALES-YA-ELIGIERON-%C2%BFQUIEN-SERA-EL-CAMPEON-DEL-MUNDIAL-2026-9-768x615.webp" alt="portada monaco 2026">
+        <h3>Así queda el Mundial de <mark>F1</mark>  2026 tras el GP de Mónaco: puntos y posiciones</h3>
+        <p>las clasificaciones de pilotos y constructores del Mundial de Fórmula 1 2026 tras el Gran Premio de Mónaco, con Andrea Kimi Antonelli, italiano de 19 años, ampliando su ventaja al frente del campeonato.</p>
+        <a href="/noticias/deporte/formulauno.html" class="leerMas">
+            Leer más
+        </a>
     </article>
     <article class="noticia">
-        <img src="" alt="">
-        <h3>noticia 3 nombre</h3>
-        <p>sintesis de la noticia</p>
-        <button>Leer más</button>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIS9Cde_6xJaGSYDeaUzKPHjb-HkVbVNdZYQ&s" alt="imagen de la copa del mundo con una pelota">
+        <h3>Acertó los últimos cuatro campeones del mundo y ahora predijo quién levantará el trofeo en el Mundial de <mark>Fútbol</mark> 2026</h3>
+        <p>La empresa de videojuegos deportivos simuló el torneo al igual que lo hizo en Sudáfrica 2010, Brasil 2014, Rusia 2018 y Qatar 2022</p>
+        <a href="/noticias/deporte/futbol.html" class="leerMas">
+            Leer más
+        </a>
     </article>
     <article class="noticia">
-        <img src="" alt="">
-        <h3>noticia 4 nombre</h3>
-        <p>sintesis de la noticia</p>
-        <button>Leer más</button>
+        <img src="https://www.ole.com.ar/2025/09/16/vSMDD1uJI_720x0__1.jpg" alt="Selección 2026 masculina de voley de Argentina">
+        <h3>Argentina en la VNL 2026: Previa, jugadores, calendario de partidos y cómo ver</h3>
+        <p>El equipo sudamericano buscará regresar a la fase final del torneo tras quedar eliminado en la primera ronda en 2025. Conoce el calendario, horarios y las claves para seguir a Argentina en la VNL 2026.</p>
+        <a href="/noticias/deporte/voleymasculino.html" class="leerMas">
+            Leer más
+        </a>
     </article>
     <article class="noticia">
-        <img src="" alt="">
-        <h3>noticia 5 nombre</h3>
-        <p>sintesis de la noticia</p>
-        <button>Leer más</button>
+        <img src="https://feva.org.ar/wp-content/uploads/2024/08/WhatsApp-Image-2024-08-25-at-22.45.57.jpeg" alt="Selección 2026 de voley femenino de Argentina, las panteras ">
+        <h3>Las Panteras vuelven a la acción: agenda y convocadas para los amistosos ante Bulgaria</h3>
+        <p>La Selección Argentina inicia su calendario internacional 2026 con dos encuentros en Santa Fe y Rosario. Aquí, un repaso del cronograma completo de la serie y la lista elegida por Facundo Morando.</p>
+        <a href="/noticias/deporte/voleyfemenino.html" class="leerMas">
+            Leer más 
+        </a>
     </article>
     <article class="noticia">
-        <img src="" alt="">
-        <h3>noticia 6 nombre</h3>
-        <p>sintesis de la noticia</p>
-        <button>Leer más</button>
+        <img src="https://www.argentina.gob.ar/sites/default/files/2026/03/hthdhbdfb.jpeg" alt="">
+        <h3>Argentina se subió al podio en el Sudamericano de Remo de Brasil</h3>
+        <p>El seleccionado argentino obtuvo 20 medallas para quedarse con el tercer lugar del medallero en el Campeonato para las categorías U19, U23 y adaptadas que se realizó en Porto Alegre.</p>
+        <a href="/noticias/deporte/remo.html" class="leerMas">
+            Leer más
+        </a>
     </article>
 </section>
 
 <section id="chisme" class="secDeNoticias">
     <h2>Chisme</h2>
+    </article>
     <article class="noticia">
-        <img src="" alt="">
-        <h3>noticia 1 nombre</h3>
-        <p>sintesis de la noticia</p>
-        <button>Leer más</button>
+        <img src="https://www.hola.com/horizon/landscape/afeb52833b00-firefly-9.jpg?im=Resize=(960),type=downsize" alt="Se casó Dualipa">
+        <h3>Dua Lipa se casa con el actor famoso, Callum Torner</h3>
+        <p>Se casó en Londres con el traje de novia más inesperado: un guiño a Bianca Jagger 55 años después</p>
+        <a href="dualipasecasa.html" class="leerMas">
+    Leer más
+</a>
     </article>
     <article class="noticia">
         <img src="" alt="">
@@ -261,37 +252,37 @@
         <img src="assets/moda/1.jpeg" alt="Romeo Beckham INTRA">
         <h3>Romeo Beckham lanza su marca de ropa deportiva INTRA</h3>
         <p>El hijo de David Beckham debuta en el mundo de la moda con una línea deportiva que ya genera polémica.</p>
-        <button>Leer más</button>
+        <a href="noticias/moda/romeo-beckham.html" class="leerMas">Leer más</a>
     </article>
     <article class="noticia">
         <img src="assets/moda/2.jpeg" alt="Artículos de lujo">
         <h3>¿Qué países gastan más en artículos de lujo?</h3>
         <p>Un nuevo ranking revela cuáles son las naciones que más invierten en moda y accesorios de alta gama.</p>
-        <button>Leer más</button>
+        <a href="noticias/moda/lujo.html" class="leerMas">Leer más</a>
     </article>
     <article class="noticia">
         <img src="assets/moda/3.jpeg" alt="Messi x Kith">
         <h3>Messi x Kith: la colección con Adidas que une fútbol y moda</h3>
         <p>Ronnie Fieg y Lionel Messi se unen para lanzar una colección exclusiva de ropa y zapatillas.</p>
-        <button>Leer más</button>
+        <a href="noticias/moda/messi-kith.html" class="leerMas">Leer más</a>
     </article>
     <article class="noticia">
         <img src="assets/moda/4.jpg" alt="Marcas internacionales">
         <h3>Las marcas internacionales que llegan a Argentina en 2026</h3>
         <p>Sandro, Mango y otras firmas globales planifican abrir locales en el país.</p>
-        <button>Leer más</button>
+        <a href="noticias/moda/marcas-argentina.html" class="leerMas">Leer más</a>
     </article>
     <article class="noticia">
         <img src="assets/moda/5.jpg" alt="Crisis textil">
         <h3>Crisis textil: la producción cayó más de 30% desde 2023</h3>
         <p>El sector sigue hundiéndose con una caída sostenida que preocupa a fabricantes y trabajadores.</p>
-        <button>Leer más</button>
+        <a href="noticias/moda/crisis-textil.html" class="leerMas">Leer más</a>
     </article>
     <article class="noticia">
         <img src="assets/moda/6.jpg" alt="Chrome Hearts">
         <h3>Chrome Hearts: la marca que se hizo imposible de conseguir</h3>
         <p>Sin publicidad, sin e-commerce y con listas de espera eternas. Así se convirtió en el objeto de deseo más exclusivo.</p>
-        <button>Leer más</button>
+        <a href="noticias/moda/chrome-hearts.html" class="leerMas">Leer más</a>
     </article>
 </section>
 
@@ -313,7 +304,7 @@
     <section id="contacto">
         <h2>Contacto</h2>
         <hr>
-        <p>Brunelli, Sofía | Cambiaso, Candela | Gomez, Ana | Pochettino del Puerto, Mailén | Quintanilla, Ornella</p>
+        <p>Brunelli, Sofía &nbsp;|&nbsp; Cambiaso, Candela &nbsp;|&nbsp; Gomez, Ana &nbsp;|&nbsp; Pochettino del Puerto, Mailén &nbsp;|&nbsp; Quintanilla, Ornella</p>
     </section>
 </footer>
 
