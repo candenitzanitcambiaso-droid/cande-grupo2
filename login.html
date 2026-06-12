@@ -29,9 +29,15 @@
         <form id="formulario-login">
             <label for="usuario">Usuario</label><br>
             <input type="text" id="usuario" name="username" placeholder="Tu usuario" required><br><br>
-
             <label for="contrasena">Contraseña</label><br>
-            <input type="password" id="contrasena" name="password" placeholder="Tu contraseña" required><br><br>
+            <div class="contenedor-password">
+                <input type="password" id="contrasena" name="password" placeholder="Tu contraseña" required>
+
+                <button type="button" id="mostrar-contrasena">
+        <img id="icono-ojo" src="assets/ojoscontrasena/cerrado.png" alt="Mostrar contraseña"></button>
+</div>
+
+<br>
 
             <button type="submit" id="btn-ingresar">Ingresar</button>
         </form>
@@ -56,7 +62,7 @@
     </section>
 </footer>
 
-<script src="js/script.js"></script>
+<script src="js/script.js"></script>>
 <script src="js/login.js"></script>
 
 </body>

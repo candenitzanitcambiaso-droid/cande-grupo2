@@ -51,3 +51,32 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+const botonMostrar =
+    document.getElementById("mostrar-contrasena");
+
+const inputContrasena =
+    document.getElementById("contrasena");
+
+const iconoOjo =
+    document.getElementById("icono-ojo");
+
+botonMostrar.addEventListener("click", function () {
+
+    if (inputContrasena.type === "password") {
+
+        inputContrasena.type = "text";
+
+        iconoOjo.src = "assets/ojoscontrasena/abierto.png";
+
+        iconoOjo.alt = "Ocultar contraseña";
+
+    } else {
+
+        inputContrasena.type = "password";
+
+        iconoOjo.src = "assets/ojoscontrasena/cerrado.png";
+
+        iconoOjo.alt = "Mostrar contraseña";
+    }
+});

@@ -22,3 +22,24 @@ input,textarea, #formulario-admin input,
     box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Una sombra suave alrededor */
     text-align: left;    /* Alinea las etiquetas a la izquierda */
 }
+
+.contenedor-password {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#mostrar-contrasena {
+    cursor: pointer;
+    background-color: white;
+    border:1px solid #ccc;
+    border-radius: 12px;
+    border:1px solid #ccc;
+    margin-top: 5px;
+    box-sizing: border-box;
+    padding: 3px;
+}
+
+#icono-ojo {
+    height: 24px;
+}

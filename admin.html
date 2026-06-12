@@ -2,36 +2,59 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Panel de Control</title>
+    <title>Panel de Administración</title>
+
     <link rel="stylesheet" href="css/diseñoform.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/diseñonav.css">
 </head>
+
 <body>
+
 <header>
-    <section>
-        <h1>Panel de Administración</h1>
-    </section>
+    <h1>Panel de Administración</h1>
+    <button id="btn-cerrar-sesion">
+        Cerrar sesión
+    </button>
+    <button id="boton-dark-mode">Modo Oscuro</button>
 </header>
 
 <section id="formulario-admin">
+
     <h2 id="titulo-formulario">Nueva noticia</h2>
 
     <input type="hidden" id="noticia-id">
 
     <label for="noticia-titulo">Título</label><br>
-    <input type="text" id="noticia-titulo" placeholder="Título de la noticia" required><br><br>
+    <input type="text" id="noticia-titulo" required><br><br>
 
     <label for="noticia-descripcion">Descripción</label><br>
-    <textarea id="noticia-descripcion" rows="4" placeholder="Síntesis de la noticia"></textarea><br><br>
+    <textarea id="noticia-descripcion" rows="4" required></textarea><br><br>
 
     <label for="noticia-imagen">URL de imagen</label><br>
-    <input type="url" id="noticia-imagen" placeholder="https://..."><br><br>
+    <input type="url" id="noticia-imagen" required><br><br>
 
-    <button id="btn-guardar-noticia">Guardar noticia</button>
-    <button id="btn-cancelar" style="display:none;">Cancelar edición</button>
+    <button id="btn-guardar-noticia">
+        Guardar noticia
+    </button>
+
+    <button id="btn-cancelar" style="display:none;">
+        Cancelar edición
+    </button>
+
 </section>
 
+<hr>
+
+<section>
+
+    <h2>Noticias cargadas</h2>
+
+    <div id="tabla-edicion"></div>
+
+</section>
+
+<script src="js/script.js"></script>
 <script src="js/admin.js"></script>
 
 </body>
