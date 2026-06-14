@@ -2,21 +2,6 @@
     font-family: "BrightKenly";
     src: url("../assets/BrightKenly.ttf") format("opentype");
 }
-body {
-    background-color: #ede8df;
-    margin: 0;
-}
-header {
-    background-color: hsl(224, 74%, 83%);
-    text-align: center;
-    padding: 20px;
-    position: relative;
-}
-header section {
-    font-family: "BrightKenly";
-    font-size: 2rem;
-    letter-spacing: 5px;
-}
 .secDeNoticias {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -40,14 +25,6 @@ header section {
     font-size: 0.9rem;
     padding: 8px 15px;
     border-radius: 6px;
-}
-.dark {
-    background-color: #272725;
-    color: aliceblue;
-}
-.dark header {
-    background-color: #3a4a8a;
-    color: lightgray;
 }
 .dark article {
     background-color: #272725;

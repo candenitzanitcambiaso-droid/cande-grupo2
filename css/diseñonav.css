@@ -1,12 +1,10 @@
 nav{
     display:flex;
     justify-content:center;
-    gap:20px;
     flex-wrap:wrap;
     margin-top:10px;
     gap: 10px;
 }
-
 nav a{
     text-decoration:none;
     color:black;
@@ -21,6 +19,7 @@ ease-in-out al principio lente, en el medio rapido y en el final lento*/
 nav a:hover{
     background:white;
     color: #2563eb;
+    text-decoration: underline;
 }
 
 button, #btnbuscar, form button, article button, article a, #volver-inicio {
