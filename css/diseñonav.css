@@ -22,7 +22,7 @@ nav a:hover{
     text-decoration: underline;
 }
 
-button, #btnbuscar, form button, article button, article a, #volver-inicio {
+button, #btnbuscar, form button, article button, article a, #volver-inicio, #btnAdmin {
     background: #2563eb;
     color: white;
     border: none;
@@ -41,7 +41,7 @@ button:hover,
 #btnbuscar:hover, 
 form button:hover, 
 article button:hover, 
-article a:hover {
+article a:hover, #btnAdmin:hover {
     opacity: 0.8;
     background-color: #1d4ed8;
     color: white;

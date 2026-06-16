@@ -53,6 +53,13 @@ btnGuardar.addEventListener("click", function () {
         return;
     }
 
+    try {
+        new URL(imagen);
+    } catch {
+        alert("Ingrese una URL válida.");
+        return;
+    }
+
     const noticia = {
         titulo,
         descripcion,
@@ -165,7 +172,7 @@ btnCerrarSesion.addEventListener(
 
         sessionStorage.removeItem("browserSession");
 
-        window.location.href = "login.html";
+        window.location.href = "index.html";
     }
 );
 

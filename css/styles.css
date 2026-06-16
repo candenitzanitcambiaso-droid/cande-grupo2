@@ -20,7 +20,7 @@ header section {
 #resena, footer, .secDeNoticias {
     margin: 40px 30px;
 }
-#boton-dark-mode {
+#btnAdmin {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -32,6 +32,19 @@ header section {
     padding: 8px 15px;
     border-radius: 6px;
 }
+#boton-dark-mode {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #374151;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    border-radius: 6px;
+    width: 16%;
+}
 .dark {
     background-color: #272725;
     color: aliceblue;
@@ -39,6 +52,10 @@ header section {
 .dark header {
     background-color: #3a4a8a;
     color: lightgray;
+}
+.dark #formulario-admin {
+    background-color: #272725;
+    border: solid 1px;
 }
 #precio-dolar {
     font-size: 0.85rem;
