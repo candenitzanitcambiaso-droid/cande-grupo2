@@ -72,12 +72,15 @@ footer {
 .botonInicio{
     position: fixed;
     right: 20px;
-    top: 95%;
-    transform: translateY(-50%);
+    top: auto; /*eliminé el valor anterior de top para que no cree conflictos con bottom*/
+    bottom: 20px; /*Lo fija a 20 píxeles del borde inferior de la ventana, manteniendo una posición constante*/
+    transform: none; /*Como ahora se posiciona directamente con bottom: 20px, ya no es necesario desplazarlo y se eliminó la transformación*/
+    /*transform: translateY(-50%) --> posicionaba el botón usando un porcentaje de la altura de la pantalla, lo que podía generar ubicaciones poco precisas*/
     background: #2563eb;
     color: white;
     padding: 12px 16px;
     border-radius: 30px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-decoration: none;
+    z-index: 9999; /*Este fue el cambio que solucionó el problema principal.*/
 }
