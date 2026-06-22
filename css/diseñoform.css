@@ -3,16 +3,6 @@ form {
     margin:0; /* Centra el formulario en la pantalla */
     text-align:left; /* Hace que los textos de los labels se alineen a la izquierda */
 }
-
-input,textarea, #formulario-admin input,
-#formulario-admin textarea{
-    width:100%;
-    padding:10px;
-    border-radius: 12px;
-    border:1px solid #ccc;
-    margin-top: 5px;
-    box-sizing: border-box; /* Evita que el padding deforme el ancho del 100% */
-}
 #formulario-admin {
     max-width: 600px;    /* Achica el panel para que no ocupe toda la pantalla */
     margin: 50px auto;   /* El 'auto' hace la magia de centrarlo SÓLO a este formulario */
@@ -42,4 +32,25 @@ input,textarea, #formulario-admin input,
 
 #icono-ojo {
     height: 24px;
+}
+
+input[type="text"],
+input[type="url"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+input[type="radio"] {
+    width: auto;
+    margin-right: 8px;
+}
+
+input[type="radio"] {
+    width: auto;
+    margin-right: 8px;
 }
