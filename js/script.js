@@ -36,7 +36,6 @@ function renderizarNoticias() {
 }
 
 function renderizarDeportes() {
-    console.log("Entró a renderizar deportes");
     const contenedor =
         document.getElementById("deportes-container");
     if (!contenedor) return;
@@ -51,6 +50,98 @@ function renderizarDeportes() {
         contenedor.innerHTML += `
             <article class="noticia">
                 <img src="${noticia.imagen}" alt="${noticia.titulo}">
+                <h3>${noticia.titulo}</h3>
+                <p>${noticia.descripcion}</p>
+            </article>
+        `;
+    });
+}
+
+function renderizarMusica() {
+    const contenedor = document.getElementById("musica-container");
+    if (!contenedor) return;
+
+    contenedor.innerHTML = "";
+
+    const noticias = JSON.parse(localStorage.getItem("noticias")) || [];
+
+    const musica = noticias.filter(function(noticia) {
+        return noticia.categoria === "musica";
+    });
+
+    musica.forEach(function(noticia) {
+        contenedor.innerHTML += `
+            <article class="noticia">
+                <img src="${noticia.imagen}" alt="${noticia.titulo}" onerror="this.src='https://placehold.co/400x200?text=Sin+imagen'">
+                <h3>${noticia.titulo}</h3>
+                <p>${noticia.descripcion}</p>
+            </article>
+        `;
+    });
+}
+
+function renderizarGaming() {
+    const contenedor = document.getElementById("gaming-container");
+    if (!contenedor) return;
+
+    contenedor.innerHTML = "";
+
+    const noticias = JSON.parse(localStorage.getItem("noticias")) || [];
+
+    const gaming = noticias.filter(function(noticia) {
+        return noticia.categoria === "gaming";
+    });
+
+    gaming.forEach(function(noticia) {
+        contenedor.innerHTML += `
+            <article class="noticia">
+                <img src="${noticia.imagen}" alt="${noticia.titulo}" onerror="this.src='https://placehold.co/400x200?text=Sin+imagen'">
+                <h3>${noticia.titulo}</h3>
+                <p>${noticia.descripcion}</p>
+            </article>
+        `;
+    });
+}
+
+function renderizarChisme() {
+    const contenedor = document.getElementById("chisme-container");
+    if (!contenedor) return;
+
+    contenedor.innerHTML = "";
+
+    const noticias = JSON.parse(localStorage.getItem("noticias")) || [];
+
+    const chisme = noticias.filter(function(noticia) {
+        return noticia.categoria === "chisme";
+    });
+
+    chisme.forEach(function(noticia) {
+        contenedor.innerHTML += `
+            <article class="noticia">
+                <img src="${noticia.imagen}" alt="${noticia.titulo}" onerror="this.src='https://placehold.co/400x200?text=Sin+imagen'">
+                <h3>${noticia.titulo}</h3>
+                <p>${noticia.descripcion}</p>
+            </article>
+        `;
+    });
+}
+
+function renderizarModa() {
+    const contenedor = document.getElementById("moda-container");
+    if (!contenedor) return;
+
+    contenedor.innerHTML = "";
+
+    const noticias = JSON.parse(localStorage.getItem("noticias")) || [];
+
+    const moda = noticias.filter(function(noticia) {
+        return noticia.categoria === "moda";
+    });
+
+    moda.forEach(function(noticia) {
+        contenedor.innerHTML += `
+            <article class="noticia">
+                <img src="${noticia.imagen}" alt="${noticia.titulo}" onerror="this.src='https://placehold.co/400x200?text=Sin+imagen'">
                 <h3>${noticia.titulo}</h3>
                 <p>${noticia.descripcion}</p>
             </article>
@@ -132,6 +223,10 @@ document.addEventListener("DOMContentLoaded", function() {
 cargarNoticiasIniciales();
 renderizarNoticias();
 renderizarDeportes();
+renderizarMusica();
+renderizarChisme();
+renderizarGaming();
+renderizarModa();
 iniciarModoOscuro();
 cargarCotizacionDolar();
 iniciarBuscador();

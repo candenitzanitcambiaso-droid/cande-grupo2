@@ -7,7 +7,7 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
 }
-.secDeNoticias h2 {
+.secDeNoticias h2{
     grid-column: 1 / 4;
     padding-bottom: 2%;
 }

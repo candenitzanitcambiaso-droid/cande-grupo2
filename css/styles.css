@@ -84,3 +84,7 @@ footer {
     text-decoration: none;
     z-index: 9999; /*Este fue el cambio que solucionó el problema principal.*/
 }
+h2 {
+    margin-left: 30px;
+    font-size: 2rem;
+}
