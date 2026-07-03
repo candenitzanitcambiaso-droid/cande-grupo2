@@ -33,6 +33,8 @@ function limpiarFormulario() {
 
     document.getElementById("noticia-imagen").value = "";
 
+    document.getElementById("noticia-destacada").checked = false;
+
     btnCancelar.style.display = "none";
 
     document.getElementById("titulo-formulario").textContent =
@@ -58,6 +60,9 @@ btnGuardar.addEventListener("click", function () {
     }
     const categoria = categoriaSeleccionada.value;
 
+    const destacada =
+    document.getElementById("noticia-destacada").checked;
+
     if (!titulo || !descripcion || !imagen) {
         alert("Complete todos los campos.");
         return;
@@ -80,7 +85,7 @@ btnGuardar.addEventListener("click", function () {
         descripcion,
         imagen,
         categoria,
-        destacada: noticiaVieja.destacada ?? false,
+        destacada,
     };
 
     if (id === "") {
@@ -170,6 +175,9 @@ function modificarNoticia(indice) {
     if (radio) {
         radio.checked = true;
     }
+
+    document.getElementById("noticia-destacada").checked =
+    noticia.destacada;
 
     btnCancelar.style.display = "inline";
     document.getElementById("titulo-formulario").textContent =
