@@ -9,21 +9,28 @@ function cargarNoticiasIniciales() {
 function renderizarNoticias() {
     const contenedor = document.getElementById("noticias-home");
     if (!contenedor) return;
+
     const datos = JSON.parse(localStorage.getItem("noticias")) || [];
-    if (datos.length === 0) {
-        contenedor.innerHTML += "<p>No hay noticias publicadas todavía.</p>";
+
+    const destacadas = datos
+        .filter(noticia => noticia.destacada)
+        .slice(0, 3);
+
+    if (destacadas.length === 0) {
+        contenedor.innerHTML += "<p>No hay noticias destacadas.</p>";
         return;
     }
-    
-    datos.forEach(function(noticia) {
+
+    destacadas.forEach(function(noticia) {
         const articulo = document.createElement("article");
         articulo.classList.add("noticia");
-        articulo.dataset.id = noticia.id;
+
         articulo.innerHTML = `
             <img src="${noticia.imagen}" alt="${noticia.titulo}" onerror="this.src='https://placehold.co/400x200?text=Sin+imagen'">
             <h3>${noticia.titulo}</h3>
             <p>${noticia.descripcion}</p>
         `;
+
         contenedor.appendChild(articulo);
     });
 }
@@ -123,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 cargarNoticiasIniciales();
-//renderizarNoticias();
+renderizarNoticias();
 renderizarDeportes();
 iniciarModoOscuro();
 cargarCotizacionDolar();
