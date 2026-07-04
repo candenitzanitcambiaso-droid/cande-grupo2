@@ -169,3 +169,24 @@ h2 {
 .dark #cerrar-menu{
     color: white;
 }
+.btn-favorito{
+    position:absolute;
+    top:20px;
+    right:20px;
+    width:42px;
+    height:42px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,.9);
+    font-size:24px;
+    line-height:1;
+    cursor:pointer;
+    z-index:20;
+    transition:.2s;
+}
+.btn-favorito:hover{
+    transform:scale(1.15);
+}

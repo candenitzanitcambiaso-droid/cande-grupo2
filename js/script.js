@@ -1,8 +1,16 @@
 function cargarNoticiasIniciales() {
     const noticias = JSON.parse(localStorage.getItem("noticias"));
-
     if (!noticias || noticias.length === 0) {
-        localStorage.setItem("noticias", JSON.stringify(NOTICIAS_INICIALES));
+        const noticiasConId = NOTICIAS_INICIALES.map(function(noticia) {
+            return {
+                id: Date.now() + Math.floor(Math.random() * 1000000),
+                ...noticia
+            };
+        });
+        localStorage.setItem(
+            "noticias",
+            JSON.stringify(noticiasConId)
+        );
     }
 }
 
@@ -23,9 +31,14 @@ function renderizarNoticias() {
 
     destacadas.forEach(function(noticia) {
         const articulo = document.createElement("article");
-        articulo.classList.add("noticia");
+        articulo.classList.add("noticia"); 
 
         articulo.innerHTML = `
+            <button
+                class="btn-favorito"
+                data-id="${noticia.id}">
+                🤍
+            </button>
             <img src="${noticia.imagen}" alt="${noticia.titulo}" onerror="this.src='https://placehold.co/400x200?text=Sin+imagen'">
             <h3>${noticia.titulo}</h3>
             <p>${noticia.descripcion}</p>
@@ -35,113 +48,29 @@ function renderizarNoticias() {
     });
 }
 
-function renderizarDeportes() {
+function renderizarCategoria(categoria, idContenedor) {
     const contenedor =
-        document.getElementById("deportes-container");
+        document.getElementById(idContenedor);
     if (!contenedor) return;
     contenedor.innerHTML = "";
     const noticias =
         JSON.parse(localStorage.getItem("noticias")) || [];
-    const deportes =
-        noticias.filter(
-            noticia => noticia.categoria === "deporte"
-        );
-    deportes.forEach(function(noticia) {
+    const filtradas =
+        noticias.filter(function(noticia) {
+            return noticia.categoria === categoria;
+        });
+    filtradas.forEach(function(noticia) {
         contenedor.innerHTML += `
             <article class="noticia">
-                <img src="${noticia.imagen}" alt="${noticia.titulo}">
-                <h3>${noticia.titulo}</h3>
-                <p>${noticia.descripcion}</p>
-            </article>
-        `;
-    });
-}
-
-function renderizarMusica() {
-    const contenedor = document.getElementById("musica-container");
-    if (!contenedor) return;
-
-    contenedor.innerHTML = "";
-
-    const noticias = JSON.parse(localStorage.getItem("noticias")) || [];
-
-    const musica = noticias.filter(function(noticia) {
-        return noticia.categoria === "musica";
-    });
-
-    musica.forEach(function(noticia) {
-        contenedor.innerHTML += `
-            <article class="noticia">
-                <img src="${noticia.imagen}" alt="${noticia.titulo}" onerror="this.src='https://placehold.co/400x200?text=Sin+imagen'">
-                <h3>${noticia.titulo}</h3>
-                <p>${noticia.descripcion}</p>
-            </article>
-        `;
-    });
-}
-
-function renderizarGaming() {
-    const contenedor = document.getElementById("gaming-container");
-    if (!contenedor) return;
-
-    contenedor.innerHTML = "";
-
-    const noticias = JSON.parse(localStorage.getItem("noticias")) || [];
-
-    const gaming = noticias.filter(function(noticia) {
-        return noticia.categoria === "gaming";
-    });
-
-    gaming.forEach(function(noticia) {
-        contenedor.innerHTML += `
-            <article class="noticia">
-                <img src="${noticia.imagen}" alt="${noticia.titulo}" onerror="this.src='https://placehold.co/400x200?text=Sin+imagen'">
-                <h3>${noticia.titulo}</h3>
-                <p>${noticia.descripcion}</p>
-            </article>
-        `;
-    });
-}
-
-function renderizarChisme() {
-    const contenedor = document.getElementById("chisme-container");
-    if (!contenedor) return;
-
-    contenedor.innerHTML = "";
-
-    const noticias = JSON.parse(localStorage.getItem("noticias")) || [];
-
-    const chisme = noticias.filter(function(noticia) {
-        return noticia.categoria === "chisme";
-    });
-
-    chisme.forEach(function(noticia) {
-        contenedor.innerHTML += `
-            <article class="noticia">
-                <img src="${noticia.imagen}" alt="${noticia.titulo}" onerror="this.src='https://placehold.co/400x200?text=Sin+imagen'">
-                <h3>${noticia.titulo}</h3>
-                <p>${noticia.descripcion}</p>
-            </article>
-        `;
-    });
-}
-
-function renderizarModa() {
-    const contenedor = document.getElementById("moda-container");
-    if (!contenedor) return;
-
-    contenedor.innerHTML = "";
-
-    const noticias = JSON.parse(localStorage.getItem("noticias")) || [];
-
-    const moda = noticias.filter(function(noticia) {
-        return noticia.categoria === "moda";
-    });
-
-    moda.forEach(function(noticia) {
-        contenedor.innerHTML += `
-            <article class="noticia">
-                <img src="${noticia.imagen}" alt="${noticia.titulo}" onerror="this.src='https://placehold.co/400x200?text=Sin+imagen'">
+                <button
+                    class="btn-favorito"
+                    data-id="${noticia.id}">
+                    🤍
+                </button>
+                <img
+                    src="${noticia.imagen}"
+                    alt="${noticia.titulo}"
+                    onerror="this.src='https://placehold.co/400x200?text=Sin+imagen'">
                 <h3>${noticia.titulo}</h3>
                 <p>${noticia.descripcion}</p>
             </article>
@@ -259,15 +188,27 @@ function iniciarSesionMenu() {
         btnAdmin.style.display = "block";
         btnLogout.style.display = "block";
     }
+    btnLogin.addEventListener("click", function () {
+        window.location.href = "login.html";
+    });
+    btnAdmin.addEventListener("click", function () {
+        window.location.href = "admin.html";
+    });
+    btnLogout.addEventListener("click", function () {
+        localStorage.removeItem("adminToken");
+        localStorage.removeItem("adminUser");
+        sessionStorage.removeItem("browserSession");
+        window.location.reload();
+    });
 }
 
 cargarNoticiasIniciales();
 renderizarNoticias();
-renderizarDeportes();
-renderizarMusica();
-renderizarChisme();
-renderizarGaming();
-renderizarModa();
+renderizarCategoria("deporte", "deportes-container");
+renderizarCategoria("musica", "musica-container");
+renderizarCategoria("chisme", "chisme-container");
+renderizarCategoria("gaming", "gaming-container");
+renderizarCategoria("moda", "moda-container");
 iniciarModoOscuro();
 cargarCotizacionDolar();
 iniciarBuscador();

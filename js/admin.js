@@ -64,7 +64,6 @@ btnGuardar.addEventListener("click", function () {
     const destacada =
     document.getElementById("noticia-destacada").checked;
 
-    // IMPORTANTE: id tiene que ir antes de usarlo
     const noticiaId= document.getElementById("noticia-id").value;
 
     const cantidadDestacadas =
@@ -96,6 +95,9 @@ btnGuardar.addEventListener("click", function () {
         id==""? {} : noticias[id];
     
     const noticia = {
+        id: id === ""
+            ? Date.now() + Math.floor(Math.random() * 1000000)
+            : noticiaVieja.id,
         titulo,
         descripcion,
         imagen,
