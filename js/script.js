@@ -154,13 +154,20 @@ function iniciarModoOscuro() {
     if (!boton) return;
     if (localStorage.getItem("darkMode") === "activado") {
         document.body.classList.add("dark");
-        boton.textContent = "Modo Claro";
+        boton.textContent = "🌙 Modo claro";
     }
-    boton.addEventListener("click", function() {
+    boton.addEventListener("click", function () {
         document.body.classList.toggle("dark");
-        const estaOscuro = document.body.classList.contains("dark");
-        localStorage.setItem("darkMode", estaOscuro ? "activado" : "desactivado");
-        boton.textContent = estaOscuro ? "Modo Claro" : "Modo Oscuro";
+        const estaOscuro =
+            document.body.classList.contains("dark");
+        localStorage.setItem(
+            "darkMode",
+            estaOscuro ? "activado" : "desactivado"
+        );
+        boton.textContent =
+            estaOscuro
+                ? "☀️ Modo claro"
+                : "🌙 Modo oscuro";
     });
 }
 
@@ -220,6 +227,40 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+function iniciarMenu() {
+    const boton =
+        document.getElementById("btn-menu");
+    const menu =
+        document.getElementById("menu-lateral");
+    const cerrar =
+        document.getElementById("cerrar-menu");
+    if (!boton || !menu || !cerrar) return;
+boton.addEventListener("click", function () {
+    menu.classList.add("abierto");
+    boton.style.display = "none";
+});
+cerrar.addEventListener("click", function () {
+    menu.classList.remove("abierto");
+    boton.style.display = "flex";
+});
+}
+function iniciarSesionMenu() {
+    const btnLogin = document.getElementById("btn-login");
+    const btnAdmin = document.getElementById("btn-admin");
+    const btnLogout = document.getElementById("btn-logout");
+    const usuarioMenu = document.getElementById("usuario-menu");
+    const adminLogueado =
+        localStorage.getItem("adminToken") &&
+        sessionStorage.getItem("browserSession");
+    if (adminLogueado) {
+        usuarioMenu.textContent =
+            "👤 " + localStorage.getItem("adminUser");
+        btnLogin.style.display = "none";
+        btnAdmin.style.display = "block";
+        btnLogout.style.display = "block";
+    }
+}
+
 cargarNoticiasIniciales();
 renderizarNoticias();
 renderizarDeportes();
@@ -230,3 +271,5 @@ renderizarModa();
 iniciarModoOscuro();
 cargarCotizacionDolar();
 iniciarBuscador();
+iniciarMenu();
+iniciarSesionMenu();
