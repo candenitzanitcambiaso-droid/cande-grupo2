@@ -32,22 +32,6 @@ header section {
     padding: 8px 15px;
     border-radius: 6px;
 }
-#boton-dark-mode{
-    width:100%;
-    box-sizing:border-box;
-    margin-top:15px;
-    padding:15px 18px;
-    border:none;
-    border-radius:12px;
-    background:#3f6ef5;
-    color:white;
-    font-size:17px;
-    font-weight:600;
-    text-align:left;
-    cursor:pointer;
-    transition:.2s;
-}
-
 #boton-dark-mode:hover{
     background:#2c58d8;
 }

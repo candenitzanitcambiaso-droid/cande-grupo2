@@ -10,18 +10,6 @@
 #resena, footer, .secDeNoticias {
     margin: 40px 30px;
 }
-#boton-dark-mode {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: #374151;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 0.9rem;
-    padding: 8px 15px;
-    border-radius: 6px;
-}
 .dark article {
     background-color: #272725;
     border: solid 1px lightgrey;
