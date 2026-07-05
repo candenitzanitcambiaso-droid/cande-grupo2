@@ -33,10 +33,23 @@ header section {
     border-radius: 6px;
 }
 #boton-dark-mode{
-   /* all: unset;
-    display:block;*/
     width:100%;
-    /*box-sizing:border-box;*/
+    box-sizing:border-box;
+    margin-top:15px;
+    padding:15px 18px;
+    border:none;
+    border-radius:12px;
+    background:#3f6ef5;
+    color:white;
+    font-size:17px;
+    font-weight:600;
+    text-align:left;
+    cursor:pointer;
+    transition:.2s;
+}
+
+#boton-dark-mode:hover{
+    background:#2c58d8;
 }
 .dark {
     background-color: #272725;
@@ -152,8 +165,7 @@ h2 {
     font-size: 2rem;
 }
 .dark #menu-lateral {
-    background-color:#272725 ;
-    background: 1f1f1f;
+    background: #1f1f1f;
     color: white;
 }
 .dark #usuario-menu{

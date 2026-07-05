@@ -12,7 +12,7 @@
 <body>
 
 <header>
-    <button id="boton-dark-mode">Modo Oscuro</button>
+    <button id="btn-menu">☰</button>
     <section id="identidad">
         <h1>TeenNews</h1>
         <h2>Panel de acceso</h2>
@@ -50,8 +50,25 @@
         <p><a id="volver-inicio" href="index.html">← Volver al inicio</a></p>
     </section>
 </main>
-<script src="js/noticias.js"></script>
-<script src="js/script.js"></script>
+
+<aside id="menu-lateral">
+    <div id="menu-header">
+        <button id="cerrar-menu">✕</button>
+        <h2>TeenNews</h2>
+        <p id="usuario-menu">👤 Invitado</p>
+    </div>
+
+    <hr>
+
+    <button class="opcion-menu" id="boton-dark-mode">
+        🌙 Modo oscuro
+    </button>
+
+    <button class="opcion-menu" onclick="window.location.href='index.html'">
+        🏠 Volver al inicio
+    </button>
+</aside>
+
 <script src="js/login.js"></script>
 
 </body>

@@ -80,3 +80,53 @@ botonMostrar.addEventListener("click", function () {
         iconoOjo.alt = "Mostrar contraseña";
     }
 });
+
+function iniciarMenu() {
+    const boton =
+        document.getElementById("btn-menu");
+    const menu =
+        document.getElementById("menu-lateral");
+    const cerrar =
+        document.getElementById("cerrar-menu");
+    if (!boton || !menu || !cerrar) return;
+boton.addEventListener("click", function () {
+    menu.classList.add("abierto");
+    boton.style.display = "none";
+});
+cerrar.addEventListener("click", function () {
+    menu.classList.remove("abierto");
+    boton.style.display = "flex";
+});
+const btnFavoritos = document.getElementById("btn-favoritos");
+
+if (btnFavoritos) {
+    btnFavoritos.addEventListener("click", function () {
+        mostrarFavoritos();
+    });
+}
+}
+
+function iniciarModoOscuro() {
+    const boton = document.getElementById("boton-dark-mode");
+    if (!boton) return;
+    if (localStorage.getItem("darkMode") === "activado") {
+        document.body.classList.add("dark");
+        boton.textContent = "🌙 Modo claro";
+    }
+    boton.addEventListener("click", function () {
+        document.body.classList.toggle("dark");
+        const estaOscuro =
+            document.body.classList.contains("dark");
+        localStorage.setItem(
+            "darkMode",
+            estaOscuro ? "activado" : "desactivado"
+        );
+        boton.textContent =
+            estaOscuro
+                ? "☀️ Modo claro"
+                : "🌙 Modo oscuro";
+    });
+}
+
+iniciarModoOscuro();
+iniciarMenu();
