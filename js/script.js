@@ -1,8 +1,16 @@
 function cargarNoticiasIniciales() {
     const noticias = JSON.parse(localStorage.getItem("noticias"));
-
     if (!noticias || noticias.length === 0) {
-        localStorage.setItem("noticias", JSON.stringify(NOTICIAS_INICIALES));
+        const noticiasConId = NOTICIAS_INICIALES.map(function(noticia) {
+            return {
+                id: Date.now() + Math.floor(Math.random() * 1000000),
+                ...noticia
+            };
+        });
+        localStorage.setItem(
+            "noticias",
+            JSON.stringify(noticiasConId)
+        );
     }
 }
 
@@ -23,33 +31,42 @@ function renderizarNoticias() {
 
     destacadas.forEach(function(noticia) {
         const articulo = document.createElement("article");
-        articulo.classList.add("noticia");
+        articulo.classList.add("noticia"); 
 
         articulo.innerHTML = `
+            <button
+                class="btn-favorito"
+                data-id="${noticia.id}">🤍</button>
             <img src="${noticia.imagen}" alt="${noticia.titulo}" onerror="this.src='https://placehold.co/400x200?text=Sin+imagen'">
             <h3>${noticia.titulo}</h3>
             <p>${noticia.descripcion}</p>
         `;
-
         contenedor.appendChild(articulo);
     });
+    actualizarBotonesFavoritos();
 }
 
-function renderizarDeportes() {
+function renderizarCategoria(categoria, idContenedor) {
     const contenedor =
-        document.getElementById("deportes-container");
+        document.getElementById(idContenedor);
     if (!contenedor) return;
     contenedor.innerHTML = "";
     const noticias =
         JSON.parse(localStorage.getItem("noticias")) || [];
-    const deportes =
-        noticias.filter(
-            noticia => noticia.categoria === "deporte"
-        );
-    deportes.forEach(function(noticia) {
+    const filtradas =
+        noticias.filter(function(noticia) {
+            return noticia.categoria === categoria;
+        });
+    filtradas.forEach(function(noticia) {
         contenedor.innerHTML += `
             <article class="noticia">
-                <img src="${noticia.imagen}" alt="${noticia.titulo}">
+                <button
+                    class="btn-favorito"
+                    data-id="${noticia.id}">🤍</button>
+                <img
+                    src="${noticia.imagen}"
+                    alt="${noticia.titulo}"
+                    onerror="this.src='https://placehold.co/400x200?text=Sin+imagen'">
                 <h3>${noticia.titulo}</h3>
                 <p>${noticia.descripcion}</p>
             </article>
@@ -57,95 +74,37 @@ function renderizarDeportes() {
     });
 }
 
-function renderizarMusica() {
-    const contenedor = document.getElementById("musica-container");
-    if (!contenedor) return;
-
-    contenedor.innerHTML = "";
-
-    const noticias = JSON.parse(localStorage.getItem("noticias")) || [];
-
-    const musica = noticias.filter(function(noticia) {
-        return noticia.categoria === "musica";
-    });
-
-    musica.forEach(function(noticia) {
-        contenedor.innerHTML += `
-            <article class="noticia">
-                <img src="${noticia.imagen}" alt="${noticia.titulo}" onerror="this.src='https://placehold.co/400x200?text=Sin+imagen'">
-                <h3>${noticia.titulo}</h3>
-                <p>${noticia.descripcion}</p>
-            </article>
-        `;
-    });
+function obtenerFavoritos() {
+    return JSON.parse(localStorage.getItem("favoritos")) || [];
+}
+function guardarFavoritos(favoritos) {
+    localStorage.setItem("favoritos", JSON.stringify(favoritos));
+}
+function esFavorito(id) {
+    return obtenerFavoritos().includes(id);
+}
+function alternarFavorito(id) {
+    let favoritos = obtenerFavoritos();
+    if (favoritos.includes(id)) {
+        favoritos = favoritos.filter(f => f !== id);
+    } else {
+        favoritos.push(id);
+    }
+    guardarFavoritos(favoritos);
+    actualizarBotonesFavoritos();
 }
 
-function renderizarGaming() {
-    const contenedor = document.getElementById("gaming-container");
-    if (!contenedor) return;
-
-    contenedor.innerHTML = "";
-
-    const noticias = JSON.parse(localStorage.getItem("noticias")) || [];
-
-    const gaming = noticias.filter(function(noticia) {
-        return noticia.categoria === "gaming";
-    });
-
-    gaming.forEach(function(noticia) {
-        contenedor.innerHTML += `
-            <article class="noticia">
-                <img src="${noticia.imagen}" alt="${noticia.titulo}" onerror="this.src='https://placehold.co/400x200?text=Sin+imagen'">
-                <h3>${noticia.titulo}</h3>
-                <p>${noticia.descripcion}</p>
-            </article>
-        `;
-    });
-}
-
-function renderizarChisme() {
-    const contenedor = document.getElementById("chisme-container");
-    if (!contenedor) return;
-
-    contenedor.innerHTML = "";
-
-    const noticias = JSON.parse(localStorage.getItem("noticias")) || [];
-
-    const chisme = noticias.filter(function(noticia) {
-        return noticia.categoria === "chisme";
-    });
-
-    chisme.forEach(function(noticia) {
-        contenedor.innerHTML += `
-            <article class="noticia">
-                <img src="${noticia.imagen}" alt="${noticia.titulo}" onerror="this.src='https://placehold.co/400x200?text=Sin+imagen'">
-                <h3>${noticia.titulo}</h3>
-                <p>${noticia.descripcion}</p>
-            </article>
-        `;
-    });
-}
-
-function renderizarModa() {
-    const contenedor = document.getElementById("moda-container");
-    if (!contenedor) return;
-
-    contenedor.innerHTML = "";
-
-    const noticias = JSON.parse(localStorage.getItem("noticias")) || [];
-
-    const moda = noticias.filter(function(noticia) {
-        return noticia.categoria === "moda";
-    });
-
-    moda.forEach(function(noticia) {
-        contenedor.innerHTML += `
-            <article class="noticia">
-                <img src="${noticia.imagen}" alt="${noticia.titulo}" onerror="this.src='https://placehold.co/400x200?text=Sin+imagen'">
-                <h3>${noticia.titulo}</h3>
-                <p>${noticia.descripcion}</p>
-            </article>
-        `;
+function actualizarBotonesFavoritos() {
+    document.querySelectorAll(".btn-favorito").forEach(function(boton){
+        const id = Number(boton.dataset.id);
+        if(esFavorito(id)){
+            boton.textContent = "❤️";
+        }else{
+            boton.textContent = "🤍";
+        }
+        boton.onclick = function(){
+            alternarFavorito(id);
+        };
     });
 }
 
@@ -154,13 +113,20 @@ function iniciarModoOscuro() {
     if (!boton) return;
     if (localStorage.getItem("darkMode") === "activado") {
         document.body.classList.add("dark");
-        boton.textContent = "Modo Claro";
+        boton.textContent = "🌙 Modo claro";
     }
-    boton.addEventListener("click", function() {
+    boton.addEventListener("click", function () {
         document.body.classList.toggle("dark");
-        const estaOscuro = document.body.classList.contains("dark");
-        localStorage.setItem("darkMode", estaOscuro ? "activado" : "desactivado");
-        boton.textContent = estaOscuro ? "Modo Claro" : "Modo Oscuro";
+        const estaOscuro =
+            document.body.classList.contains("dark");
+        localStorage.setItem(
+            "darkMode",
+            estaOscuro ? "activado" : "desactivado"
+        );
+        boton.textContent =
+            estaOscuro
+                ? "☀️ Modo claro"
+                : "🌙 Modo oscuro";
     });
 }
 
@@ -220,13 +186,114 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+function iniciarMenu() {
+    const boton =
+        document.getElementById("btn-menu");
+    const menu =
+        document.getElementById("menu-lateral");
+    const cerrar =
+        document.getElementById("cerrar-menu");
+    if (!boton || !menu || !cerrar) return;
+boton.addEventListener("click", function () {
+    menu.classList.add("abierto");
+    boton.style.display = "none";
+});
+cerrar.addEventListener("click", function () {
+    menu.classList.remove("abierto");
+    boton.style.display = "flex";
+});
+const btnFavoritos = document.getElementById("btn-favoritos");
+    btnFavoritos.addEventListener("click", function () {
+        mostrarFavoritos();
+});
+}
+
+function iniciarSesionMenu() {
+    const btnLogin = document.getElementById("btn-login");
+    const btnAdmin = document.getElementById("btn-admin");
+    const btnLogout = document.getElementById("btn-logout");
+    const usuarioMenu = document.getElementById("usuario-menu");
+    const adminLogueado =
+        localStorage.getItem("adminToken") &&
+        sessionStorage.getItem("browserSession");
+    if (adminLogueado) {
+        usuarioMenu.textContent =
+            "👤 " + localStorage.getItem("adminUser");
+        btnLogin.style.display = "none";
+        btnAdmin.style.display = "block";
+        btnLogout.style.display = "block";
+    }
+    btnLogin.addEventListener("click", function () {
+        window.location.href = "login.html";
+    });
+    btnAdmin.addEventListener("click", function () {
+        window.location.href = "admin.html";
+    });
+    btnLogout.addEventListener("click", function () {
+        localStorage.removeItem("adminToken");
+        localStorage.removeItem("adminUser");
+        sessionStorage.removeItem("browserSession");
+        window.location.reload();
+    });
+}
+
+function mostrarFavoritos() {
+    const favoritos = obtenerFavoritos();
+    const noticias =
+        JSON.parse(localStorage.getItem("noticias")) || [];
+    const contenedor =
+        document.getElementById("contenedor-favoritos");
+    contenedor.innerHTML = "";
+    const noticiasFavoritas =
+        noticias.filter(function(noticia){
+            return favoritos.includes(noticia.id);
+        });
+    noticiasFavoritas.forEach(function(noticia){
+        contenedor.innerHTML += `
+            <article class="noticia">
+                <img
+                    src="${noticia.imagen}"
+                    alt="${noticia.titulo}">
+                <h3>${noticia.titulo}</h3>
+                <p>${noticia.descripcion}</p>
+            </article>
+        `;
+    });
+    document.getElementById("favoritos").style.display = "block";
+    ocultarSecciones();
+}
+
+function ocultarSecciones() {
+    document.querySelectorAll("body > section").forEach(function(seccion){
+        if(seccion.id !== "favoritos"){
+            seccion.style.display = "none";
+        }
+    });
+}
+
+function mostrarSecciones() {
+    document.querySelectorAll("body > section").forEach(function(seccion){
+        seccion.style.display = "block";
+    });
+    document.getElementById("favoritos").style.display = "none";
+}
+
 cargarNoticiasIniciales();
 renderizarNoticias();
-renderizarDeportes();
-renderizarMusica();
-renderizarChisme();
-renderizarGaming();
-renderizarModa();
+renderizarCategoria("deporte", "deportes-container");
+renderizarCategoria("musica", "musica-container");
+renderizarCategoria("chisme", "chisme-container");
+renderizarCategoria("gaming", "gaming-container");
+renderizarCategoria("moda", "moda-container");
 iniciarModoOscuro();
 cargarCotizacionDolar();
 iniciarBuscador();
+iniciarMenu();
+iniciarSesionMenu();
+
+const btnVolver = document.getElementById("btn-volver");
+if (btnVolver) {
+    btnVolver.addEventListener("click", function () {
+        mostrarSecciones();
+    });
+}
