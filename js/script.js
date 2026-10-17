@@ -45,11 +45,11 @@ function renderizarNoticias() {
     });
     actualizarBotonesFavoritos();
 }
-///------------------------------------------------------------
+
 btnLogin.addEventListener("click", function () {
     window.location.href = "login.html";
 });
-///----------------------------------------------------------------
+
 
 
 function renderizarCategoria(categoria, idContenedor) {
@@ -99,10 +99,10 @@ function alternarFavorito(id) {
     guardarFavoritos(favoritos);
     actualizarBotonesFavoritos();
 }
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 function actualizarBotonesFavoritos() {
     document.querySelectorAll(".btn-favorito").forEach(function(boton){
-        const id = Number(boton.dataset.id);////
+        const id = Number(boton.dataset.id);
         if(esFavorito(id)){
             boton.textContent = "❤️";
         }else{
@@ -113,7 +113,7 @@ function actualizarBotonesFavoritos() {
         };
     });
 }
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 function iniciarModoOscuro() {
     const boton = document.getElementById("boton-dark-mode");
     if (!boton) return;
@@ -191,26 +191,27 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 function iniciarMenu() {
-    const boton =
-        document.getElementById("btn-menu");/////
-    const menu =
-        document.getElementById("menu-lateral");/////
-    const cerrar =
-        document.getElementById("cerrar-menu");/////
+    const boton = document.getElementById("btn-menu");
+    const menu = document.getElementById("menu-lateral");
+    const cerrar = document.getElementById("cerrar-menu");
     if (!boton || !menu || !cerrar) return;
-boton.addEventListener("click", function () {
-    menu.classList.add("abierto");
-    boton.style.display = "none";
-});
-cerrar.addEventListener("click", function () {
-    menu.classList.remove("abierto");
-    boton.style.display = "flex";
-});
+    boton.addEventListener("click", function () {
+        menu.classList.add("abierto");
+        boton.style.display = "none";
+    });
+    cerrar.addEventListener("click", function () {
+        menu.classList.remove("abierto");
+        boton.style.display = "flex";
+    });
+    
+    const btnFavoritos = document.getElementById("btn-favoritos");
+    btnFavoritos.addEventListener("click", function () {
+    window.location.href = "favoritos.html";
+    });
 }
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 function iniciarSesionMenu() {
     const btnLogin = document.getElementById("btn-login");
     const btnAdmin = document.getElementById("btn-admin");
@@ -247,6 +248,7 @@ renderizarCategoria("musica", "musica-container");
 renderizarCategoria("chisme", "chisme-container");
 renderizarCategoria("gaming", "gaming-container");
 renderizarCategoria("moda", "moda-container");
+actualizarBotonesFavoritos();
 iniciarModoOscuro();
 cargarCotizacionDolar();
 iniciarBuscador();
