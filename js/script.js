@@ -46,12 +46,6 @@ function renderizarNoticias() {
     actualizarBotonesFavoritos();
 }
 
-btnLogin.addEventListener("click", function () {
-    window.location.href = "login.html";
-});
-
-
-
 function renderizarCategoria(categoria, idContenedor) {
     const contenedor =
         document.getElementById(idContenedor);
