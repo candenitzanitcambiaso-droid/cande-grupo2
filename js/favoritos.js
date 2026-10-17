@@ -16,16 +16,12 @@ function mostrarFavoritos() {
     const contenedor = document.getElementById("contenedor-favoritos");
     const favoritos  = obtenerFavoritos();
     const noticias   = JSON.parse(localStorage.getItem("noticias")) || [];
-
     const favoritas = noticias.filter(n => favoritos.includes(n.id));
-
     contenedor.innerHTML = "";
-
     if (favoritas.length === 0) {
         contenedor.innerHTML = "<p>Todavía no tenés noticias favoritas.</p>";
         return;
     }
-
     favoritas.forEach(function (noticia) {
         contenedor.innerHTML += `
             <article class="noticia">

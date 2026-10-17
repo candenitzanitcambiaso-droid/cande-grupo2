@@ -17,22 +17,17 @@ function cargarNoticiasIniciales() {
 function renderizarNoticias() {
     const contenedor = document.getElementById("noticias-home");
     if (!contenedor) return;
-
     const datos = JSON.parse(localStorage.getItem("noticias")) || [];
-
     const destacadas = datos
         .filter(noticia => noticia.destacada)
         .slice(0, 3);
-
     if (destacadas.length === 0) {
         contenedor.innerHTML += "<p>No hay noticias destacadas.</p>";
         return;
     }
-
     destacadas.forEach(function(noticia) {
         const articulo = document.createElement("article");
         articulo.classList.add("noticia"); 
-
         articulo.innerHTML = `
             <button
                 class="btn-favorito"
@@ -77,19 +72,22 @@ function renderizarCategoria(categoria, idContenedor) {
 function obtenerFavoritos() {
     return JSON.parse(localStorage.getItem("favoritos")) || [];
 }
+
 function guardarFavoritos(favoritos) {
     localStorage.setItem("favoritos", JSON.stringify(favoritos));
 }
+
 function esFavorito(id) {
     return obtenerFavoritos().includes(id);
 }
+
 function alternarFavorito(id) {
     let favoritos = obtenerFavoritos();
     if (favoritos.includes(id)) {
         favoritos = favoritos.filter(f => f !== id);
     } else {
         favoritos.push(id);
-    }
+}
     guardarFavoritos(favoritos);
     actualizarBotonesFavoritos();
 }
@@ -176,7 +174,6 @@ document.addEventListener("DOMContentLoaded", function() {
     if (!sessionStorage.getItem("browserSession")) {
         localStorage.removeItem("adminToken");
     }
-
     const botonInicio = document.querySelector(".botonInicio");
     if (botonInicio) {
         botonInicio.addEventListener("click", function(e) {
@@ -199,7 +196,6 @@ function iniciarMenu() {
         menu.classList.remove("abierto");
         boton.style.display = "flex";
     });
-    
     const btnFavoritos = document.getElementById("btn-favoritos");
     btnFavoritos.addEventListener("click", function () {
     window.location.href = "favoritos.html";
