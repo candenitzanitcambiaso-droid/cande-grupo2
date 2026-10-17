@@ -45,6 +45,12 @@ function renderizarNoticias() {
     });
     actualizarBotonesFavoritos();
 }
+///------------------------------------------------------------
+btnLogin.addEventListener("click", function () {
+    window.location.href = "login.html";
+});
+///----------------------------------------------------------------
+
 
 function renderizarCategoria(categoria, idContenedor) {
     const contenedor =
@@ -93,10 +99,10 @@ function alternarFavorito(id) {
     guardarFavoritos(favoritos);
     actualizarBotonesFavoritos();
 }
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function actualizarBotonesFavoritos() {
     document.querySelectorAll(".btn-favorito").forEach(function(boton){
-        const id = Number(boton.dataset.id);
+        const id = Number(boton.dataset.id);////
         if(esFavorito(id)){
             boton.textContent = "❤️";
         }else{
@@ -107,7 +113,7 @@ function actualizarBotonesFavoritos() {
         };
     });
 }
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function iniciarModoOscuro() {
     const boton = document.getElementById("boton-dark-mode");
     if (!boton) return;
@@ -185,14 +191,14 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function iniciarMenu() {
     const boton =
-        document.getElementById("btn-menu");
+        document.getElementById("btn-menu");/////
     const menu =
-        document.getElementById("menu-lateral");
+        document.getElementById("menu-lateral");/////
     const cerrar =
-        document.getElementById("cerrar-menu");
+        document.getElementById("cerrar-menu");/////
     if (!boton || !menu || !cerrar) return;
 boton.addEventListener("click", function () {
     menu.classList.add("abierto");
@@ -202,12 +208,9 @@ cerrar.addEventListener("click", function () {
     menu.classList.remove("abierto");
     boton.style.display = "flex";
 });
-const btnFavoritos = document.getElementById("btn-favoritos");
-    btnFavoritos.addEventListener("click", function () {
-        mostrarFavoritos();
-});
 }
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function iniciarSesionMenu() {
     const btnLogin = document.getElementById("btn-login");
     const btnAdmin = document.getElementById("btn-admin");
@@ -237,47 +240,6 @@ function iniciarSesionMenu() {
     });
 }
 
-function mostrarFavoritos() {
-    const favoritos = obtenerFavoritos();
-    const noticias =
-        JSON.parse(localStorage.getItem("noticias")) || [];
-    const contenedor =
-        document.getElementById("contenedor-favoritos");
-    contenedor.innerHTML = "";
-    const noticiasFavoritas =
-        noticias.filter(function(noticia){
-            return favoritos.includes(noticia.id);
-        });
-    noticiasFavoritas.forEach(function(noticia){
-        contenedor.innerHTML += `
-            <article class="noticia">
-                <img
-                    src="${noticia.imagen}"
-                    alt="${noticia.titulo}">
-                <h3>${noticia.titulo}</h3>
-                <p>${noticia.descripcion}</p>
-            </article>
-        `;
-    });
-    document.getElementById("favoritos").style.display = "block";
-    ocultarSecciones();
-}
-
-function ocultarSecciones() {
-    document.querySelectorAll("body > section").forEach(function(seccion){
-        if(seccion.id !== "favoritos"){
-            seccion.style.display = "none";
-        }
-    });
-}
-
-function mostrarSecciones() {
-    document.querySelectorAll("body > section").forEach(function(seccion){
-        seccion.style.display = "block";
-    });
-    document.getElementById("favoritos").style.display = "none";
-}
-
 cargarNoticiasIniciales();
 renderizarNoticias();
 renderizarCategoria("deporte", "deportes-container");
@@ -290,10 +252,3 @@ cargarCotizacionDolar();
 iniciarBuscador();
 iniciarMenu();
 iniciarSesionMenu();
-
-const btnVolver = document.getElementById("btn-volver");
-if (btnVolver) {
-    btnVolver.addEventListener("click", function () {
-        mostrarSecciones();
-    });
-}

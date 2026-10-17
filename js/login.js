@@ -97,13 +97,6 @@ cerrar.addEventListener("click", function () {
     menu.classList.remove("abierto");
     boton.style.display = "flex";
 });
-const btnFavoritos = document.getElementById("btn-favoritos");
-
-if (btnFavoritos) {
-    btnFavoritos.addEventListener("click", function () {
-        mostrarFavoritos();
-    });
-}
 }
 
 function iniciarModoOscuro() {

@@ -6,16 +6,16 @@ if (!sessionStorage.getItem("browserSession")) {
 if (!localStorage.getItem("adminToken")) {
     window.location.href = "login.html";
 }
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 let noticias = JSON.parse(localStorage.getItem("noticias")) || [];
 
 const btnGuardar = document.getElementById("btn-guardar-noticia");
 const btnCancelar = document.getElementById("btn-cancelar");
 const tabla = document.getElementById("tabla-edicion");
-const btnCerrarSesion = document.getElementById("btn-cerrar-sesion");
+const btnCerrarSesion = document.getElementById("btn-cerrar-sesion");///
 console.log("admin.js cargó");
 console.log(btnGuardar);
-
+/////////////////////////////////////////////////////////////////////////////////////////////
 function guardarNoticias() {
     localStorage.setItem(
         "noticias",
